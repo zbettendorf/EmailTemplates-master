@@ -1,0 +1,25 @@
+{{!This v1 uses ProgramInfo.ClientSupportPhone and ProgramInfo.ClientSupportEmail. It is used by Cash Rewards and Offline Booking. All types should be redone to use ProgramInfo}}
+                        <tr>
+                            <td colspan="2">
+                                <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-6">
+                                    <tr>
+                                        <th class="block-header" style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">CONTACT US</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 8px;">
+                                            <img src="https://content.revloyalty.com/rev/firstdata/prod/icons/ic-call-64px-white-363636-bkg.png" alt="Call Us" class="mobile" width="32" height="32" style="vertical-align: middle; background-color: #363636" /><!-- Modified icon licensed from Google under the CC-BY license. See https://www.google.com/design/icons/ --><span class="mobile-hide">&nbsp;Phone: </span>{{ProgramInfo.CustomerSupportPhone}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0px 8px 12px 8px;">
+                                            <img src="https://content.revloyalty.com/rev/firstdata/prod/icons/ic-email-64px-white-363636-bkg.png" alt="Email Us" class="mobile" width="32" height="32" style="vertical-align: middle; background-color: #363636" /><!-- Modified icon licensed from Google under the CC-BY license. See https://www.google.com/design/icons/ --><span class="mobile-hide">&nbsp;Email: </span><a href="mailto:{{ProgramInfo.ClientSupportEmail}}" style="color: #000000;text-decoration: underline;">{{ProgramInfo.ClientSupportEmail}}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 85%; padding: 0px 8px 12px 8px;">
+                                            {{> partials/privacy-policy-statement}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>

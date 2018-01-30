@@ -1,0 +1,232 @@
+{
+   "programBlock":{
+      "programId":1899000000033,
+      "programLogo":"https://content.revloyalty.com/rev/firstdata/dev/programs/first-data.png",
+      "clientPhone":"888-888-8888 opt 2",
+      "clientPhoneAlt":"",
+      "contactEmail":"Clientsupport@email.com",
+      "contactEmailAlt":"Alternatesupport@email.com",
+      "supportPhone":"888-555-9999",
+      "supportPhoneAlt":"999-111-2222",
+      "redemptionDate":"Monday, April 04, 2016",
+      "isGiftCardsAvailable":true,
+      "isMerchandiseAvailable":true
+   },
+   "segments":[
+      {
+         "airlegid":"QUFfMTIyNl9f",
+         "airpricingsolutionkey":"eBWA8RtsSSyKE0UOOPb + Ow==",
+         "initialorigin":"ORD",
+         "finaldestination":"MSP",
+         "totaltime":"1 hrs 22 min",
+         "bookingairline":"AA",
+         "bookingairlinelabel":"American Airlines",
+         "departuretime":"10:05",
+         "departureampm":"PM",
+         "arrivaltime":"11:27",
+         "arrivalampm":"PM",
+         "initialoriginlabel":"O'Hare Intl Arpt",
+         "finaldestinationlabel":"Minneapolis St Paul International Arpt",
+         "numberofstops":0,
+         "totalprice":12271,
+         "baseairsegments":[
+            {
+               "carrier":"AA",
+               "carrierlabel":"American Airlines",
+               "flightnumber":1226,
+               "equipment":"M80",
+               "flighttime":"1 hrs 22 min",
+               "distance":341,
+               "origin":"ORD",
+               "destination":"MSP",
+               "departuretime":"10:05",
+               "departureampm":"PM",
+               "arrivaltime":"11:27",
+               "arrivalampm":"PM",
+               "originlabel":"O'Hare Intl Arpt",
+               "destinationlabel":"Minneapolis St Paul International Arpt",
+               "arrivaldetails":{
+                  "airport":{
+                     "airportcode":"MSP",
+                     "name":"Minneapolis St Paul International Arpt",
+                     "terminal":1
+                  },
+                  "location":{
+                     "city":"Minneapolis",
+                     "state":"MN",
+                     "countrycode":"US",
+                     "country":"United States"
+                  },
+                  "datetime":{
+                     "timestamp":"2016-04-12T00:27:00.000-04:00",
+                     "date":"2016-04-11",
+                     "timelabel":"23:27 PM",
+                     "timezoneoffset":"-05:00"
+                  }
+               },
+               "departuredetails":{
+                  "airport":{
+                     "airportcode":"ORD",
+                     "name":"O'Hare Intl Arpt",
+                     "terminal":3
+                  },
+                  "location":{
+                     "city":"Chicago",
+                     "state":"IL",
+                     "countrycode":"US",
+                     "country":"United States"
+                  },
+                  "datetime":{
+                     "timestamp":"2016-04-11T23:05:00.000-04:00",
+                     "date":"2016-04-11",
+                     "timelabel":"22:05 PM",
+                     "timezoneoffset":"-05:00"
+                  }
+               },
+               "changeofplane":false
+            }
+         ],
+         "stopslist":"",
+         "flightclass":"Economy",
+         "daydate":"Mon, Apr 11,2016",
+         "searchid":"ORD_MSP_2016-04-11_2016-04-14_Economy_2_null_1_0_0_0_0"
+      },
+      {
+         "airlegid":"QUFfNDZfXw",
+         "airpricingsolutionkey":"lT9sYvjCRFSH7XKjlIae3g==",
+         "initialorigin":"MSP",
+         "finaldestination":"ORD",
+         "totaltime":"1 hrs 33 min",
+         "bookingairline":"AA",
+         "bookingairlinelabel":"American Airlines",
+         "departuretime":"4:00",
+         "departureampm":"PM",
+         "arrivaltime":"5:33",
+         "arrivalampm":"PM",
+         "initialoriginlabel":"Minneapolis St Paul International Arpt",
+         "finaldestinationlabel":"O'Hare Intl Arpt",
+         "numberofstops":0,
+         "totalprice":16495,
+         "baseairsegments":[
+            {
+               "carrier":"AA",
+               "carrierlabel":"American Airlines",
+               "flightnumber":46,
+               "equipment":"M80",
+               "flighttime":"1 hrs 33 min",
+               "distance":341,
+               "origin":"MSP",
+               "destination":"ORD",
+               "departuretime":"4:00",
+               "departureampm":"PM",
+               "arrivaltime":"5:33",
+               "arrivalampm":"PM",
+               "originlabel":"Minneapolis St Paul International Arpt",
+               "destinationlabel":"O'Hare Intl Arpt",
+               "arrivaldetails":{
+                  "airport":{
+                     "airportcode":"ORD",
+                     "name":"O'Hare Intl Arpt",
+                     "terminal":3
+                  },
+                  "location":{
+                     "city":"Chicago",
+                     "state":"IL",
+                     "countrycode":"US",
+                     "country":"United States"
+                  },
+                  "datetime":{
+                     "timestamp":"2016-04-14T18:33:00.000-04:00",
+                     "timezoneoffset":"-05:00",
+                     "timelabel":"17:33 PM",
+                     "date":"2016-04-14"
+                  }
+               },
+               "departuredetails":{
+                  "airport":{
+                     "airportcode":"MSP",
+                     "name":"Minneapolis St Paul International Arpt",
+                     "terminal":1
+                  },
+                  "location":{
+                     "city":"Minneapolis",
+                     "state":"MN",
+                     "countrycode":"US",
+                     "country":"United States"
+                  },
+                  "datetime":{
+                     "timestamp":"2016-04-14T17:00:00.000-04:00",
+                     "timezoneoffset":"-05:00",
+                     "timelabel":"16:00 PM",
+                     "date":"2016-04-14"
+                  }
+               },
+               "changeofplane":false
+            }
+         ],
+         "stopslist":"",
+         "flightclass":"Economy",
+         "daydate":"Thu, Apr 14,2016",
+         "searchid":"ORD_MSP_2016-04-11_2016-04-14_Economy_2_null_1_0_0_0_0"
+      }
+   ],
+   "poc":{
+      "firstname":"Kris",
+      "lastname":"Richardson"
+   },
+   "contactInfo":{
+      "isresidential":true,
+      "country":{
+         "name":"United States of America",
+         "code":"US",
+         "postalcodename":"Zip Code"
+      },
+      "streetaddress":{
+         "address1":"201 Lavaca St"
+      },
+      "city":"Austin",
+      "countrysubdivision":{
+         "name":"Texas",
+         "code":"TX"
+      },
+      "postalcode":78701,
+      "phonenanp":{
+         "areacode":612,
+         "exchangecode":200,
+         "subscribernumber":3000
+      },
+      "email":"kris.richardson@razrhq.com",
+      "confirmemail":"kris.richardson@razrhq.com",
+      "addressline1":"201 Lavaca St",
+      "state":"TX",
+      "zipcode":78701,
+      "phone1":612,
+      "phone2":200,
+      "phone3":3000,
+      "phone":6122003000
+   },
+   "uamInitials":"",
+   "travelers":[
+      {
+         "label":"Adult",
+         "firstname":"Kris",
+         "lastname":"Richardson",
+         "gender":"M",
+         "dateofbirth":{
+            "birthdaymonth":"09",
+            "birthdayday":21,
+            "birthdayyear":1983
+         },
+         "error":"",
+         "adultrequired":false,
+         "youngadult":false,
+         "adult":true,
+         "startdateage":32,
+         "enddateage":32,
+         "birthdaymonth":"09",
+         "birthdayday":21,
+         "birthdayyear":1983
+      }
+   ],
+   "dtb":""
+}

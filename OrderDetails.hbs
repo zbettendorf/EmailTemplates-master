@@ -1,0 +1,472 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Order Details</title>
+    </head>
+    <body>
+
+        <table border="0" cellpadding="20" cellspacing="0" width="100%" id="bodyTable" style="color: #5b5b5b;font-family: 'Lucida Sans Unicode', 'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 93%; line-height: 1.2">
+            <tr>
+                <td align="center" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="0" width="760" id="emailContainer">
+
+                        {{#ifEquals version "2" "string"}}
+                            {{!Hotels}}
+                            {{#if hotel}}
+                                <tr>
+                                    <td colspan="2">
+                                        <table border="0" cellspacing="0" cellpadding="0" width="760" align="left" class="details-table">
+                                            <tr>
+                                                <th colspan="2" style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: left;text-transform: uppercase; font-size: 108%;">HOTEL INFORMATION</th>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="padding: 8px;">
+                                                    <b>Reservation Number: </b>
+                                                    {{#if PartnerFulfillmentNumber}}
+                                                        {{PartnerFulfillmentNumber}}
+                                                    {{else}}
+                                                        Unknown
+                                                    {{/if}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="padding: 8px;">
+                                                    <b style="font-size: 123.1%">{{hotel.name}}</b><br />
+                                                    <span>{{hotel.location.address1}}</span><br />
+                                                    {{#if hotel.location.address2}}
+                                                        <span>{{hotel.location.address2}}</span><br />
+                                                    {{/if}}
+                                                    <span>{{hotel.location.city}}{{#if hotel.location.state}},
+                                                        {{hotel.location.state}}{{/if}}&nbsp;&nbsp;{{hotel.location.postalCode}}</span><br />
+                                                    <span>{{hotel.location.country}}</span><br />
+                                                    <span>{{formatPhone hotel.phone}}</span>
+                                                </td>
+                                            </tr>
+                                            {{#if hotel.checkinInstructions}}
+                                                <tr>
+                                                    <td colspan="2" style="padding: 8px;">
+                                                        <b>Check-In Instructions:</b><br />
+                                                        <span>{{hotel.checkinInstructions}}</span><br />
+                                                    </td>
+                                                </tr>
+                                            {{/if}}
+                                            {{#if hotel.specialCheckinInstructions}}
+                                                <tr>
+                                                    <td colspan="2" style="padding: 8px;">
+                                                        <b>Special Check-In Instructions:</b><br />
+                                                        <span>{{hotel.specialCheckinInstructions}}</span>
+                                                    </td>
+                                                </tr>
+                                            {{/if}}
+                                            <tr>
+                                                <td style="padding: 8px;">
+                                                    <b>Check-In:</b><br />
+                                                    {{#if hotel.checkinDate}}
+                                                        <span>{{hotel.checkinDate}}</span><br />
+                                                    {{/if}}
+                                                    <span>{{hotel.checkinTime}}</span>
+                                                </td>
+                                                <td style="padding: 8px;">
+                                                    <b>Check-Out:</b><br />
+                                                    {{#if hotel.checkoutDate}}
+                                                        <span>{{hotel.checkoutDate}}</span><br />
+                                                    {{/if}}
+                                                    <span>{{hotel.checkoutTime}}</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <table border="0" cellspacing="0" cellpadding="0" width="760" align="left" class="details-table">
+                                            <tr>
+                                                <th colspan="2" style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: left;text-transform: uppercase;font-size: 108%;">GUEST INFORMATION</th>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px;">
+                                                    <b>Room 1</b><br />
+                                                    {{#if rooms.[0].confirmationNumber}}
+                                                        <span>Confirmation Number: {{rooms.[0].confirmationNumber}}</span><br />
+                                                    {{/if}}
+                                                    <span>{{rooms.[0].description}}</span><br />
+                                                    <span>{{rooms.[0].guestFirstName}} {{#if rooms.[0].guestMiddleName}}
+                                                        {{rooms.[0].guestMiddleName}}{{/if}} {{rooms.[0].guestLastName}}</span><br />
+                                                    <span>Adults: {{rooms.[0].numberOfAdults}}</span><br />
+                                                    {{#if rooms.[0].agesOfChildren}}
+                                                        <span>Children: {{rooms.[0].agesOfChildren}} <span>Ages:&nbsp;
+                                                            {{#each rooms.[0].agesOfChildren}}{{#if @index}}, {{/if}}
+                                                                {{this}}{{/each}}
+                                            </span></span><br />
+                                                    {{/if}}
+                                                    <span>Points: {{numberFormat rooms.[0].room_cost.[0] "###,###.###"}}</span><br />
+                                                </td>
+                                            </tr>
+
+                                            {{#if fees}}
+                                                {{#each fees}}
+                                                    <tr>
+                                                        <td colspan="2" style="padding: 8px; text-align: right;">
+                                                            <strong>{{this.label}}:</strong> {{this.amount}}
+                                                        </td>
+                                                    </tr>
+                                                {{/each}}
+                                            {{/if}}
+                                            {{#if totalfees}}
+                                                <tr>
+                                                    <td colspan="2" style="color: #231f20;background-color: #f1f2f2;padding: 8px; text-align: right; font-size: 116%">
+                                                        <strong>TOTAL DUE ON ARRIVAL:</strong> {{totalfees}}
+                                                    </td>
+                                                </tr>
+                                            {{/if}}
+                                            <tr>
+                                                <td colspan="2" style="color: #231f20;background-color: #f1f2f2;padding: 8px; text-align: right; font-size: 116%">
+                                                    <strong>TOTAL POINTS USED:</strong> {{numberFormat totalPoints "###,###.###"}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>The points used to purchase this booking will be applied to the total cost of the reservation along with any applicable taxes and fees.
+                                                        {{#if totaltaxes}}
+                                                            Using these points, a payment will be collected in the amount of {{totaltaxes}} to suffice the aforementioned charges.
+                                                        {{/if}}
+                                                    </p>
+                                                    <p>The supplier of this hotel reservation is Travelscape LLC.</p>
+                                                    <p>All Hotel redemptions are final. We are unable to process refunds, exchanges or cancellations.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            {{/if}}
+                            {{!Events}}
+                            {{#if selectedTicket}}
+                                <tr>
+                                    <td colspan="2">
+                                        <table border="0" cellspacing="0" cellpadding="0" width="760" align="left" class="details-table">
+                                            <tr>
+                                                <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">DESCRIPTION</th>
+                                                <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">QTY</th>
+                                                <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">PRICE</th>
+                                                <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">TOTAL</th>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="padding: 8px; vertical-align: top;">
+                                                    <b style="font-size: 123.1%">{{event.name}}</b><br />
+                                                    <span>{{venue.name}}</span><br />
+                                                    <span>{{venue.address.address1}}</span><br />
+                                                    {{#if venue.address.address2}}
+                                                        <span>{{venue.address.address2}}</span><br />
+                                                    {{/if}}
+                                                    <span>{{venue.address.city}}{{#if venue.address.region}},
+                                                        {{venue.address.region}}{{/if}}&nbsp;&nbsp;</span><br />
+                                                    <span>{{venue.address.country}}</span><br />
+                                                    <br/>
+                                                    <br/>
+                                                    <span>{{stringDateFormat event.date "full"}} at {{event.time}}</span><br />
+                                                    <span>Section: {{selectedTicket.section}}</span><br/>
+                                                    <span>Row: {{selectedTicket.row}}</span><br/>
+                                                </td>
+                                                <td style="padding: 8px; vertical-align: top; text-align: center;">{{selectedTicket.desiredQuantity}}</td>
+                                                <td style="padding: 8px; vertical-align: top; text-align: center;">{{selectedTicket.points}}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="background: #ffffff;height: 10px;"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="color: #231f20;background-color: #f1f2f2;padding: 8px; text-align: right; font-size: 116%">
+                                        <strong>TOTAL POINTS USED:</strong> {{selectedTicket.points}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="background: #ffffff;height: 10px;"></td>
+                                </tr>
+                            {{/if}}
+                            {{!Flights}}
+                            {{#if itinerary}}
+                                <tr>
+                                    <td colspan="2">
+                                        <table border="0" cellspacing="0" cellpadding="0" align="left" width="760">
+                                            <tr>
+                                                <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: left;text-transform: uppercase;font-size: 108%;">FLIGHT INFORMATION</th>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px;">Reservation Number: {{PartnerFulfillmentNumber}}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                {{#each sectors}}
+                                    <tr>
+                                        <td colspan="2">
+                                            <table border="0" cellspacing="0" cellpadding="0" align="left" width="760">
+                                                <tr>
+                                                    <td style="padding: 8px;">
+                                                        <b style="font-size: 123.1%">{{this.bookingAirlineLabel}}
+                                                            <span>&nbsp;&nbsp;&nbsp;{{this.totalTime}}</span>
+                                                        </b><span>&nbsp;&nbsp;&nbsp;
+                                                        {{#if this.numberOfStops}}
+                                                            Stops {{../numberOfStops}} ({{../stopslist}})
+                                                        {{else}}
+                                                            Non-Stop Flight
+                                                        {{/if}}
+                                            </span><br />
+
+                                                        <span>Flight #
+                                                            {{#if this.airSegments}}
+                                                                {{this.[0].flightNumber}}
+                                                            {{/if}}
+                                                            &nbsp;&nbsp;&nbsp;{{this.airSegments.[0].fareClass}}&nbsp;&nbsp;&nbsp;</span><br />
+
+
+                                                        <span>{{stringDateFormat this.departureTime "full"}}</span>
+                                                        <table border="0" cellspacing="0" cellpadding="0"  style="margin: 8px 8px 8px 16px;">
+                                                            <tr>
+                                                                <td align="center" style="padding: 0 8px;">{{stringDateFormat this.airSegments.[0].departureDetails.dateTime "full"}} <br />{{this.airSegments.[0].departureDetails.airportDetail.airportCode}}</td>
+                                                                <td align="center" style="padding: 0 8px;">&rarr;</td>
+                                                                <td align="center" style="padding: 0 8px;">{{stringDateFormat this.airSegments.[0].arrivalDetails.dateTime "full"}} <br />{{this.airSegments.[0].arrivalDetails.airportDetail.airportCode}}</td>
+                                                            </tr>
+                                                        </table>
+                                                        <span>{{this.airSegments.[0].departureDetails.airportDetail.name}} ({{this.airSegments.[0].departureDetails.airportDetail.airportCode}})</span><br />
+                                                        <span>{{this.airSegments.[0].arrivalDetails.airportDetail.name}} ({{this.airSegments.[0].arrivalDetails.airportDetail.airportCode}})</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-left: 60px;">
+                                                        <table border="0" cellspacing="0" cellpadding="8" width="700" >
+                                                            <tr>
+                                                                <td colspan="3" style=" background-color: #777; color:#fff;">
+                                                                    <b>Flight Details</b><br/>
+                                                                </td>
+                                                            </tr>
+
+                                                            {{#if this.baseairsegments}}
+                                                                {{#each this}}
+                                                                    {{> partials/air-segment-old}}
+                                                                {{/each}}
+                                                            {{/if}}
+                                                            {{#if this.airSegments}}
+                                                                {{#each this}}
+                                                                    {{> partials/air-segment}}
+                                                                {{/each}}
+                                                            {{/if}}
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="background: #ffffff;height: 16px; border-bottom: 1px solid #363636"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                {{/each}}
+                                <tr>
+                                    <td colspan="2">
+                                        <table border="0" width="760" cellspacing="0" cellpadding="8" align="left">
+                                            <tr>
+                                                <th class="block-header" colspan="3" style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">TRAVELER INFORMATION</th>
+                                            </tr>
+                                            <tr>
+                                                <td style="vertical-align: top;">
+                                                    {{#if travelers.[0]}}
+                                                        <span>{{travelers.[0].type}}{{#if travelers.[0].seatType}} - {{travelers.[0].seatType}}{{/if}}</span><br />
+                                                        {{#if uamInitials}}
+                                                            <span>Unaccompanied Minor</span><br />
+                                                        {{/if}}
+                                                        <span>{{travelers.[0].firstName}} {{#if travelers.[0].middleName}}
+                                                            {{travelers.[0].middleName}}{{/if}} {{travelers.[0].lastName}}</span><br />
+                                                        <span>{{travelers.[0].gender}} - {{travelers.[0].dateOfBirth}}</span><br />
+                                                        {{#if travelers.[0].redressNumber}}
+                                                            <span>Redress #: {{travelers.[0].redressNumber}}</span><br />
+                                                        {{/if}}
+                                                    {{/if}}
+                                                </td>
+                                                <td style="vertical-align: top;">
+                                                    {{#if travelers.[1]}}
+                                                        <span>{{travelers.[1].type}}{{#if travelers.[1].seatType}} - {{travelers.[1].seatType}}{{/if}}</span><br />
+                                                        {{#if uamInitials}}
+                                                            <span>Unaccompanied Minor</span><br />
+                                                        {{/if}}
+                                                        <span>{{travelers.[1].firstName}} {{#if travelers.[1].middleName}}
+                                                            {{travelers.[1].middleName}}{{/if}} {{travelers.[1].lastName}}</span><br />
+                                                        <span>{{travelers.[1].gender}} - {{travelers.[1].dateOfBirth}}</span><br />
+                                                        {{#if travelers.[1].redressNumber}}
+                                                            <span>Redress #: {{travelers.[1].redressNumber}}</span><br />
+                                                        {{/if}}
+                                                    {{/if}}
+                                                </td>
+                                                <td style="vertical-align: top;">
+                                                    {{#if travelers.[2]}}
+                                                        <span>{{travelers.[2].type}}{{#if travelers.[2].seatType}} - {{travelers.[2].seatType}}{{/if}}</span><br />
+                                                        {{#if uamInitials}}
+                                                            <span>Unaccompanied Minor</span><br />
+                                                        {{/if}}
+                                                        <span>{{travelers.[2].firstName}} {{#if travelers.[2].middleName}}
+                                                            {{travelers.[2].middleName}}{{/if}} {{travelers.[2].lastName}}</span><br />
+                                                        <span>{{travelers.[2].gender}} - {{travelers.[2].dateOfBirth}}</span><br />
+                                                        {{#if travelers.[2].redressNumber}}
+                                                            <span>Redress #: {{travelers.[2].redressNumber}}</span><br />
+                                                        {{/if}}
+                                                    {{/if}}
+                                                </td>
+                                            </tr>
+                                            {{#if travelers.[3]}}
+                                                <tr>
+                                                    <td style="vertical-align: top;">
+                                                        {{#if travelers.[3]}}
+                                                            <span>{{travelers.[3].type}}{{#if travelers.[3].seatType}} - {{travelers.[3].seatType}}{{/if}}</span><br />
+                                                            {{#if uamInitials}}
+                                                                <span>Unaccompanied Minor</span><br />
+                                                            {{/if}}
+                                                            <span>{{travelers.[3].firstName}} {{#if travelers.[3].middleName}}
+                                                                {{travelers.[3].middleName}}{{/if}} {{travelers.[3].lastName}}</span><br />
+                                                            <span>{{travelers.[3].gender}} - {{travelers.[3].dateOfBirth}}</span><br />
+                                                            {{#if travelers.[3].redressNumber}}
+                                                                <span>Redress #: {{travelers.[3].redressNumber}}</span><br />
+                                                            {{/if}}
+                                                        {{/if}}
+                                                    </td>
+                                                    <td style="vertical-align: top;">
+                                                        {{#if travelers.[4]}}
+                                                            <span>{{travelers.[4].type}}{{#if travelers.[4].seatType}} - {{travelers.[4].seatType}}{{/if}}</span><br />
+                                                            {{#if uamInitials}}
+                                                                <span>Unaccompanied Minor</span><br />
+                                                            {{/if}}
+                                                            <span>{{travelers.[4].firstName}} {{#if travelers.[4].middleName}}
+                                                                {{travelers.[4].middleName}}{{/if}} {{travelers.[4].lastName}}</span><br />
+                                                            <span>{{travelers.[4].gender}} - {{travelers.[4].dateOfBirth}}</span><br />
+                                                            {{#if travelers.[4].redressNumber}}
+                                                                <span>Redress #: {{travelers.[4].redressNumber}}</span><br />
+                                                            {{/if}}
+                                                        {{/if}}
+                                                    </td>
+                                                    <td style="vertical-align: top;">
+                                                        {{#if travelers.[5]}}
+                                                            <span>{{travelers.[5].type}}{{#if travelers.[5].seatType}} - {{travelers.[5].seatType}}{{/if}}</span><br />
+                                                            {{#if uamInitials}}
+                                                                <span>Unaccompanied Minor</span><br />
+                                                            {{/if}}
+                                                            <span>{{travelers.[5].firstName}} {{#if travelers.[5].middleName}}
+                                                                {{travelers.[5].middleName}}{{/if}} {{travelers.[5].lastName}}</span><br />
+                                                            <span>{{travelers.[5].gender}} - {{travelers.[5].dateOfBirth}}</span><br />
+                                                            {{#if travelers.[5].redressNumber}}
+                                                                <span>Redress #: {{travelers.[5].redressNumber}}</span><br />
+                                                            {{/if}}
+                                                        {{/if}}
+                                                    </td>
+                                                </tr>
+                                            {{/if}}
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="background: #ffffff;height: 10px;"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="color: #231f20;background-color: #f1f2f2;padding: 8px; text-align: right; font-size: 116%">
+                                        <strong>TOTAL POINTS USED:</strong>
+                                        {{#if segments.[1]}}
+                                            {{numberFormat segments.[1].totalprice "###,###.###"}}
+                                        {{else}}
+                                            {{numberFormat RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}
+                                        {{/if}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="background: #ffffff;height: 10px;"></td>
+                                </tr>
+                            {{/if}}
+                            {{#if segments}}
+                                {{> partials/old-order-details}}
+                            {{/if}}
+                            {{!Merchandise}}
+                            {{#if manufacturer}}
+                                <tr>
+                                    <td colspan="2">
+                                        <table border="0" cellspacing="0" cellpadding="0" align="left" class="details-table" width="760">
+                                            <tr>
+                                                <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">DESCRIPTION</th>
+                                                <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">QTY</th>
+                                                <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">PRICE</th>
+                                                <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">TOTAL</th>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" style="background: #ffffff;height: 10px;"></td>
+                                            </tr>
+                                            <tr>
+                                                {{#if description}}
+                                                    <td style="color: #363636;background-color: #f1f2f2;padding: 16px 10px;text-align: left;font-size: 116%;">
+                                                        {{{description}}}
+                                                        {{#if variantOption}}<br/>{{variantOption}}{{/if}}
+                                                        {{#if ispStore}}
+                                                            <br />
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;Pick Up Location:</span><br />
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;{{ispStore.name}}</span><br />
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;Phone: {{formatPhone ispStore.address.phoneNumber}}</span><br />
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;{{ispStore.address.address1}}</span><br />
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;{{ispStore.address.city}}, {{ispStore.address.region}}  {{ispStore.address.postalCode}}</span>
+                                                        {{/if}}
+                                                    </td>
+                                                    <td style="color: #231f20;background-color: #f1f2f2;padding: 16px 10px;text-align: center;font-size: 116%;">{{qty}}</td>
+                                                    <td style="color: #231f20;background-color: #f1f2f2;padding: 16px 10px;text-align: center;font-size: 116%;">{{numberFormat ri.points "###,###.###"}} Points</td>
+                                                    <td style="color: #231f20;background-color: #f1f2f2;padding: 16px 10px;text-align: center;font-size: 116%;">{{numberFormat lineTotalPoints "###,###.###"}} Points</td>
+                                                {{else}}
+                                                    <td style="color: #363636;background-color: #ddd;padding: 16px 10px;text-align: left;font-size: 116%;">
+                                                        {{sp.name}}
+                                                    </td>
+                                                    <td style="color: #231f20;background-color: #ddd;padding: 16px 10px;text-align: center;font-size: 116%;">{{qty}}</td>
+                                                    <td style="color: #231f20;background-color: #ddd;padding: 16px 10px;text-align: center;font-size: 116%;">{{numberFormat ri.points "###,###.###"}} Points</td>
+                                                    <td style="color: #231f20;background-color: #ddd;padding: 16px 10px;text-align: center;font-size: 116%;">{{numberFormat lineTotalPoints "###,###.###"}} Points</td>
+                                                {{/if}}
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            {{/if}}
+                        {{else}}
+                            {{> partials/old-order-details}}
+                        {{/ifEquals}}
+
+ {{!Offline Booking}}
+                       {{#if Details}}
+                       <tr>
+                            <td colspan="2">
+                                <table border="0" cellspacing="0" cellpadding="0" align="left" class="details-table" width="760">
+                                    <tr>
+                                        <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: left;text-transform: uppercase;font-size: 108%;">DESCRIPTION</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="background: #ffffff;height: 10px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #363636;background-color: #f1f2f2;padding: 16px 10px;text-align: left;font-size: 116%;">
+                                            {{htmlLineBreaks Details}}<br /><br/>
+                                            <span style="font-size: 88%;"><b>Supplier Order Number: </b>{{PartnerFulfillmentNumber}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 0;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #5b5b5b;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                       {{/if}}
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>

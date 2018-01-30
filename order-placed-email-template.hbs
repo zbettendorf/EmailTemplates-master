@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Order Confirmation</title>
+</head>
+<body>
+
+<table border="0" cellpadding="20" cellspacing="0" width="100%" id="bodyTable"
+       style="color: #5b5b5b;font-family: 'Lucida Sans Unicode', 'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 93%; line-height: 1.2">
+    <tr>
+        <td align="center" valign="top">
+            <table border="0" cellpadding="0" cellspacing="0" width="760" id="emailContainer">
+                {{> partials/order-placed-header}}
+
+                <!-- Cash Rewards - ACH -->
+                {{#if RedemptionOrder.UserGoods.OrderDetails.cashRewards}}
+                    <tr>
+                        <td colspan="2">
+                            <table border="0" cellspacing="0" cellpadding="0" align="left" class="details-table"
+                                   width="760">
+                                <tr>
+                                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: left;text-transform: uppercase;font-size: 108%;">
+                                        DESCRIPTION
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="background: #ffffff;height: 10px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #363636;background-color: #f1f2f2;padding: 16px 10px;text-align: left;font-size: 116%;">
+                                        {{RedemptionOrder.UserGoods.OrderDetails.orderDescription}}<br/>
+                                        {{#if RedemptionOrder.UserGoods.OrderDetails.routingNumber}}
+                                            Routing Number: {{RedemptionOrder.UserGoods.OrderDetails.routingNumber}}
+                                            &nbsp;
+                                            <span>{{RedemptionOrder.UserGoods.OrderDetails.institutionName}}</span><br/>
+                                        {{else}}
+                                            {{#if RedemptionOrder.UserGoods.OrderDetails.institutionName}}
+                                                Financial Institution Name:
+                                                <span>{{RedemptionOrder.UserGoods.OrderDetails.institutionName}}</span><br/>
+                                            {{/if}}
+                                        {{/if}}
+                                        {{#if RedemptionOrder.UserGoods.OrderDetails.accountNumber}}
+                                            Account Number: {{RedemptionOrder.UserGoods.OrderDetails.accountNumber}}
+                                            <br/>
+                                        {{/if}}
+                                        <br/>
+                                        <span style="font-size: 88%;">{{htmlLineBreaks
+                                                RedemptionOrder.UserGoods.OrderDetails.acknowledgement}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 0;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #5b5b5b;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #231f20; padding: 8px; text-align: right; font-size: 116%">
+                                        <strong>TOTAL POINTS USED:</strong> {{numberFormat
+                                            RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-5">
+                                <tr>
+                                    <th class="block-header"
+                                        style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                                        CONTACT/SHIPPING INFORMATION
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="line-height: 18px; padding: 12px 8px;">
+                                        <p style="margin: 0; padding: 0;">
+                                            {{RedemptionOrder.UserGoods.OrderDetails.contactInfo.person.firstName}} {{#if
+                                                RedemptionOrder.UserGoods.OrderDetails.contactInfo.person.middleName}}{{RedemptionOrder.UserGoods.OrderDetails.contactInfo.person.middleName}} {{/if}}{{RedemptionOrder.UserGoods.OrderDetails.contactInfo.person.lastName}}
+                                            <br/>
+                                            {{formatPhone Fulfillment.TelephoneNumber}}<br/>
+                                            {{Fulfillment.EmailAddress}}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Contact Us -->
+                    {{> partials/order-placed-contact-us-v1}}
+                {{/if}}
+
+                <!--Offline Booking -->
+                {{#if RedemptionOrder.UserGoods.OrderDetails.Details}}
+                    <tr>
+                        <td colspan="2">
+                            <table border="0" cellspacing="0" cellpadding="0" align="left" class="details-table"
+                                   width="760">
+                                <tr>
+                                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: left;text-transform: uppercase;font-size: 108%;">
+                                        DESCRIPTION
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="background: #ffffff;height: 10px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #363636;background-color: #f1f2f2;padding: 16px 10px;text-align: left;font-size: 116%;">
+                                        {{htmlLineBreaks RedemptionOrder.UserGoods.OrderDetails.Details}}<br/><br/>
+                                        <span style="font-size: 88%;"><b>Supplier Order Number: </b>{{RedemptionOrder.UserGoods.PartnerFulfillmentNumber}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 0;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #5b5b5b;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #231f20; padding: 8px; text-align: right; font-size: 116%">
+                                        <strong>TOTAL POINTS USED:</strong> {{numberFormat
+                                            RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-5">
+                                <tr>
+                                    <th class="block-header"
+                                        style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                                        CONTACT/SHIPPING INFORMATION
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="line-height: 18px; padding: 12px 8px;">
+                                        <p style="margin: 0; padding: 0;">
+                                            {{#if RedemptionOrder.UserGoods.OrderDetails.Contact.companyName}}{{RedemptionOrder.UserGoods.OrderDetails.Contact.companyName}}
+                                                <br/>{{/if}}
+                                            {{Fulfillment.FirstName}} {{Fulfillment.LastName}}<br/>
+                                            {{Fulfillment.TelephoneNumber}}<br/>
+                                            {{Fulfillment.EmailAddress}}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Contact Us -->
+                    {{> partials/order-placed-contact-us-v1}}
+                {{/if}}
+
+
+                {{#ifEquals "2" RedemptionOrder.UserGoods.0.OrderDetails.version "string"}}
+                    {{> partials/order-placed-new-order-details}}
+                    <!-- Terms And Conditions -->
+                    {{> partials/order-placed-new-termsandconditions}}
+                {{else}}
+                    {{#ifEquals "2" RedemptionOrder.UserGoods.OrderDetails.version "string"}}
+                        {{> partials/order-placed-new-order-details-single}}
+                        <!-- Terms And Conditions -->
+                        {{> partials/order-placed-new-termsandconditions}}
+                    {{else}}
+                        {{> partials/order-placed-old-order-details}}
+                        {{> partials/order-placed-old-termsandconditions}}
+                    {{/ifEquals}}
+                {{/ifEquals}}
+
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

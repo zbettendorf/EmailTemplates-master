@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Electronic Gift Card Delivery</title>
+    </head>
+    <body>
+
+        <table border="0" cellpadding="20" cellspacing="0" width="100%" id="bodyTable" style="color: #5b5b5b;font-family: 'Lucida Sans Unicode', 'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 93%; line-height: 1.2">
+            <tr>
+                <td align="center" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="0" width="760" id="emailContainer">
+                        <tr>
+                            <td style="width: 60%;">
+                                <table border="0" cellspacing="0" cellpadding="0" width="280" align="left" class="welcome-container">
+                                    <tr>
+                                        <td>
+                                            <img class="logo" src="{{UserGoods.OrderDetails.programBlock.programLogo}}" alt="First Data" width="280" height="96" border="0" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="0" cellspacing="0" cellpadding="0" align="left" width="100%" class="header-1">
+                                    <tr>
+                                        <th class="block-header" style="text-align: left;color: #ffffff; padding: 8px; background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">Electronic Gift Card Delivery</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 8px;">
+                                            <p style="margin: 0; padding: 0;">Order Number: {{RedemptionOrder.Id}}<br />Order Date: {{stringDateFormat RedemptionOrder.TransactionDate "full"}}</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px 8px;" colspan="2">
+                                <h1 style="color: #000000;font-size: 180%;font-weight: normal;margin: 0; padding-bottom: 8px;"><b>Electronic Gift Card</b></h1>
+                                <p style="margin:0; padding: 0;">You have received an electric gift card from {{Member.FullName}}, {{Member.EmailAddress}}.</p>
+                            </td>
+                        </tr>
+{{!Merchandise single item}}                         
+                        <tr>
+                            <td colspan="2">
+                                <table border="0" cellspacing="0" cellpadding="0" align="left" class="details-table" width="760" style="max-width: 760px;">
+                                    <tr>
+                                        <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">DESCRIPTION</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="background: #ffffff;height: 10px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: top; color: #363636;padding: 8px 8px;text-align: left;font-size: 108%;">
+                                            <p>You have received a {{UserGoods.GoodsDescription}}.</p>
+                                            <p>You can access your electronic gift card by clicking on the button below.
+                                            <p style="width: 200px; height: auto; margin: 32px auto;"><a style="font-weight: bold; border: 2px solid #00AA00; padding: 8px;width: 100%; height: 100%; color: #000; text-decoration: none; background-color: #FFF; font-family: Helvetica, Arial, sans-serif" href="{{UserGoods.OrderDetails.electronicDeliveryInfo.electronicRedemptionInfo.gyftRedemptionUrl}}">View Gift Card</a></p>
+                                            <p>If the link above does not work, please copy and paste the following URL into your browser.</p>
+                                            <p style="word-break:break-all;"><a style="color: #0000AA;" target="_blank" href="{{UserGoods.OrderDetails.electronicDeliveryInfo.electronicRedemptionInfo.gyftRedemptionUrl}}">{{UserGoods.OrderDetails.electronicDeliveryInfo.electronicRedemptionInfo.gyftRedemptionUrl}}</a></p>
+                                            <p>Please keep this email for your reference.</p>
+                                            <p>Thank you.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-6">
+                                    <tr>
+                                        <th class="block-header" style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">CONTACT US</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 8px;">
+                                            <img src="https://content.revloyalty.com/rev/firstdata/prod/icons/ic-call-64px-white-363636-bkg.png" alt="Call Us" class="mobile" width="32" height="32" style="vertical-align: middle; background-color: #363636" /><!-- Modified icon licensed from Google under the CC-BY license. See https://www.google.com/design/icons/ --><span class="mobile-hide">&nbsp;Phone: </span><span style="color: #000000">{{UserGoods.OrderDetails.programBlock.clientPhone}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0px 8px 12px 8px;">
+                                            <img src="https://content.revloyalty.com/rev/firstdata/prod/icons/ic-email-64px-white-363636-bkg.png" alt="Email Us" class="mobile" width="32" height="32" style="vertical-align: middle; background-color: #363636" /><!-- Modified icon licensed from Google under the CC-BY license. See https://www.google.com/design/icons/ --><span class="mobile-hide">&nbsp;Email: </span><a href="mailto:support@gyft.com" style="color: #000000;text-decoration: underline;">{{UserGoods.OrderDetails.programBlock.contactEmail}}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 85%; padding: 0px 8px 12px 8px;">
+                                            {{> partials/privacy-policy-statement}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>

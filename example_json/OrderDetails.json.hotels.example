@@ -1,0 +1,205 @@
+"OrderDetails":{
+   "programBlock":{
+      "programId":1899000000033,
+      "programLogo":"https://content.revloyalty.com/rev/firstdata/dev/programs/firstdata.jpg",
+      "clientPhone":"888-888-8888 opt 2",
+      "clientPhoneAlt":"",
+      "contactEmail":"Clientsupport@email.com",
+      "contactEmailAlt":"Alternatesupport@email.com",
+      "supportPhone":"888-555-9999",
+      "supportPhoneAlt":"999-111-2222",
+      "redemptionDate":"Tuesday, October 25, 2016",
+      "isGiftCardsAvailable":true,
+      "isMerchandiseAvailable":true
+   },
+   "segments":[
+      {
+         "airlegid":"UA_1651_MSP_201612122010_ORD_201612122144",
+         "initialorigin":"MSP",
+         "initialoriginlabel":"Minneapolis St Paul International Arpt",
+         "finaldestination":"ORD",
+         "finaldestinationlabel":"O'Hare Intl Arpt",
+         "totaltime":"1 hr 34 mins",
+         "bookingairline":"UA",
+         "bookingairlinelabel":"United Airlines Inc",
+         "totalprice":9842,
+         "departuretime":"8:10",
+         "arrivaltime":"9:44",
+         "numberofstops":0,
+         "airsegments":[
+            {
+               "key":"cBqteF2lQG2WAQkEEZWNEw==",
+               "carrier":"UA",
+               "carrierlabel":"United Airlines Inc",
+               "flightnumber":1651,
+               "equipment":739,
+               "flighttime":"1 hrs 34 min",
+               "layovertime":"0 hrs 10 min",
+               "changeofplane":false,
+               "numberofstops":0,
+               "distance":341,
+               "departuredetails":{
+                  "airportdetail":{
+                     "airportcode":"MSP",
+                     "name":"Minneapolis St Paul International Arpt",
+                     "terminal":1
+                  },
+                  "locationdetail":{
+                     "city":"MSP",
+                     "state":"MN",
+                     "countrycode":"US",
+                     "country":"United States"
+                  },
+                  "datetime":"2016-12-12T20:10:00.000"
+               },
+               "arrivaldetails":{
+                  "airportdetail":{
+                     "airportcode":"ORD",
+                     "name":"O'Hare Intl Arpt",
+                     "terminal":1
+                  },
+                  "locationdetail":{
+                     "city":"CHI",
+                     "state":"IL",
+                     "countrycode":"US",
+                     "country":"United States"
+                  },
+                  "datetime":"2016-12-12T21:44:00.000"
+               },
+               "connection":false
+            }
+         ],
+         "departuredatetime":"2016-12-12T20:10:00.000",
+         "departureampm":"PM",
+         "arrivaldatetime":"2016-12-12T21:44:00.000",
+         "arrivalampm":"PM",
+         "stopslist":"",
+         "flightclass":"Economy",
+         "daydate":"Mon, Dec 12,2016",
+         "searchid":"MSP_ORD_2016-12-12_2016-12-14_ECONOMY_2_null_1_0_0_0_0"
+      },
+      {
+         "airlegid":"UA_627_ORD_201612142110_MSP_201612142237",
+         "initialorigin":"ORD",
+         "initialoriginlabel":"O'Hare Intl Arpt",
+         "finaldestination":"MSP",
+         "finaldestinationlabel":"Minneapolis St Paul International Arpt",
+         "totaltime":"1 hr 27 mins",
+         "bookingairline":"UA",
+         "bookingairlinelabel":"United Airlines Inc",
+         "totalprice":13010,
+         "departuretime":"9:10",
+         "arrivaltime":"10:37",
+         "numberofstops":0,
+         "airsegments":[
+            {
+               "key":"M2f4SXm4QqOCoIbJz9pEpA==",
+               "carrier":"UA",
+               "carrierlabel":"United Airlines Inc",
+               "flightnumber":627,
+               "equipment":739,
+               "flighttime":"1 hrs 27 min",
+               "layovertime":0,
+               "changeofplane":false,
+               "numberofstops":0,
+               "distance":341,
+               "departuredetails":{
+                  "airportdetail":{
+                     "airportcode":"ORD",
+                     "name":"O'Hare Intl Arpt",
+                     "terminal":1
+                  },
+                  "locationdetail":{
+                     "city":"CHI",
+                     "state":"IL",
+                     "countrycode":"US",
+                     "country":"United States"
+                  },
+                  "datetime":"2016-12-14T21:10:00.000"
+               },
+               "arrivaldetails":{
+                  "airportdetail":{
+                     "airportcode":"MSP",
+                     "name":"Minneapolis St Paul International Arpt",
+                     "terminal":1
+                  },
+                  "locationdetail":{
+                     "city":"MSP",
+                     "state":"MN",
+                     "countrycode":"US",
+                     "country":"United States"
+                  },
+                  "datetime":"2016-12-14T22:37:00.000"
+               },
+               "connection":false
+            }
+         ],
+         "departuredatetime":"2016-12-14T21:10:00.000",
+         "departureampm":"PM",
+         "arrivaldatetime":"2016-12-14T22:37:00.000",
+         "arrivalampm":"PM",
+         "stopslist":"",
+         "flightclass":"Economy",
+         "daydate":"Wed, Dec 14,2016",
+         "searchid":"MSP_ORD_2016-12-12_2016-12-14_ECONOMY_2_null_1_0_0_0_0"
+      }
+   ],
+   "poc":{
+      "firstname":"Kris",
+      "lastname":"Richardson"
+   },
+   "contactInfo":{
+      "isresidential":true,
+      "country":{
+         "name":"United States of America",
+         "code":"US",
+         "postalcodename":"Zip Code"
+      },
+      "streetaddress":{
+         "address1":"200 Main St",
+         "combined":"200 Main St"
+      },
+      "phonenanp":{
+         "areacode":612,
+         "exchangecode":200,
+         "subscribernumber":3000
+      },
+      "city":"Austin",
+      "countrysubdivision":{
+         "name":"Texas",
+         "code":"TX"
+      },
+      "postalcode":78701,
+      "email":"kris.richardson@razrhq.com",
+      "confirmemail":"kris.richardson@razrhq.com",
+      "addressline1":"200 Main St",
+      "state":"TX",
+      "zipcode":78701,
+      "phone1":612,
+      "phone2":200,
+      "phone3":3000,
+      "phone":6122003000
+   },
+   "uamInitials":"",
+   "travelers":[
+      {
+         "label":"Adult",
+         "firstname":"Kris",
+         "lastname":"Richardson",
+         "gender":"M",
+         "dateofbirth":{
+            "birthdaymonth":"09",
+            "birthdayday":21,
+            "birthdayyear":1983,
+            "birthdate":"09/21/1983"
+         },
+         "youngadult":false,
+         "adult":true,
+         "birthdaymonth":"09",
+         "birthdayday":21,
+         "birthdayyear":1983
+      }
+   ],
+   "dtb":"",
+   "flightsVersion":"2"
+}

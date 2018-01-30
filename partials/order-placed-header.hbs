@@ -1,0 +1,74 @@
+<tr>
+    <td>
+        <table border="0" cellspacing="0" cellpadding="0" width="400" align="left"
+               class="welcome-container">
+            <tr>
+                <td>
+                    {{#if ProgramInfo.ProgramLogo}}
+                        <img class="logo"
+                             src="https://content.revloyalty.com/rev/firstdata/prod/programs/{{ProgramInfo.ProgramLogo}}"
+                             alt="" width="280" border="0"/>
+                    {{else}}
+
+                        <!-- Merchandise multiple items Program Logo -->
+
+                        {{#if RedemptionOrder.UserGoods.[0]}}
+                            <img class="logo"
+                                 src="{{RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.programLogo}}"
+                                 alt="" width="280" border="0"/>
+                        {{else}}
+
+                            <!--
+                            Hotels Program Logo
+                            Events Program Logo
+                            Flights Program Logo
+                            Merchandise single item Program Logo
+                            -->
+                            <img class="logo"
+                                 src="{{RedemptionOrder.UserGoods.OrderDetails.programBlock.programLogo}}"
+                                 alt="" width="280" border="0"/>
+                        {{/if}}
+                    {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 8px;">
+                    <h1 style="color: #000000;font-size: 220%;font-weight: normal;margin: 0; padding-bottom: 8px;">
+                        <b>CONGRATULATIONS!</b></h1>
+                    <p style="margin:0; padding: 0;">Your rewards order has been placed. You will find
+                        your order details below.</p>
+                </td>
+            </tr>
+        </table>
+    </td>
+    <td>
+        <table border="0" cellspacing="0" cellpadding="0" align="left" width="100%" class="header-1">
+            <tr>
+                <th class="block-header"
+                    style="text-align: left;color: #ffffff; padding: 8px; background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                    ORDER CONFIRMATION
+                </th>
+            </tr>
+            <tr>
+                <td style="padding: 12px 8px;">
+                    <p style="margin: 0; padding: 0;">Order Number: {{RedemptionOrder.Id}}<br/>Order
+                        Date: {{stringDateFormat RedemptionOrder.TransactionDate "full"}}</p>
+                </td>
+            </tr>
+        </table>
+        <table border="0" cellspacing="0" cellpadding="0" width="100%" align="left" class="header-2">
+            <tr>
+                <th class="block-header"
+                    style="text-align: left;color: #ffffff; padding: 8px; background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                    PARTICIPANT INFORMATION
+                </th>
+            </tr>
+            <tr>
+                <td style="padding: 12px 8px;">
+                    <p style="margin: 0; padding: 0;">{{Member.FullName}}<br/>{{Member.EmailAddress}}
+                        <br/>{{formatPhone Member.TelephoneNumber}}</p>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>

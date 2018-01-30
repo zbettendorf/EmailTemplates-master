@@ -1,0 +1,48 @@
+{{#if this.layovertime}}
+<tr>
+    <td colspan="3" style="padding: 8px;">
+        {{../this.originlabel}} ({{../this.origin}}) Layover: {{../this.layovertime}}
+    </td>
+</tr>
+{{/if}}
+<tr>
+    <td colspan="3">
+        <b>{{this.carrierlabel}} - {{stringDateFormat this.departuredetails.datetime.date "full"}}</b><br/>
+    </td>
+</tr>
+<tr>
+    <td style="background-color: #f1f2f2;">Flight #{{this.flightnumber}} - Aircraft {{this.equipment}}</td>
+    <td style="background-color: #f1f2f2;">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td align="center" style="padding: 0 8px;">{{this.departuretime}} {{this.departureampm}}<br />{{this.origin}}</td>
+                <td align="center" style="padding: 0 8px;">&rarr;</td>
+                {{#if this.nesteddetails}}
+                {{#each ../this.nesteddetails}}
+                <td align="center" style="padding: 0 8px;">{{this.airport.airportcode}}</td>
+                <td align="center" style="padding: 0 8px;">&rarr;</td>
+                {{/each}}
+                {{/if}}
+                <td align="center" style="padding: 0 8px;">{{this.arrivaltime}} {{this.arrivalampm}}<br />{{this.destination}}</td>
+            </tr>
+        </table>
+    </td>
+    <td style="background-color: #f1f2f2;">
+        <span>Flight Time: {{this.flighttime}}</span>
+    </td>
+</tr>
+
+{{#if this.nesteddetails}}
+    {{#each ../this.nesteddetails}}
+    <tr>
+        <td colspan="3" style="padding: 8px;">
+            {{this.airport.name}} ({{this.airport.airportcode}}) Layover: 
+            {{#if ../changeofplane}}
+            <i>Change of Planes &ndash; Flight #TBD</i>
+            {{else}}
+            <i>No Plane Change</i>
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+{{/if}}

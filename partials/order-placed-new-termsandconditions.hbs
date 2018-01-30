@@ -1,0 +1,910 @@
+
+<tr>
+    <td colspan="2">
+        <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-7">
+            <tr>
+                <th class="block-header"
+                    style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                    TERMS AND CONDITIONS
+                </th>
+            </tr>
+            <tr>
+
+                <!-- CASH Rewards - ACH TAC -->
+
+                <!-- Deposit to Checking -->
+                {{#ifEquals "5148000000012" RedemptionOrder.UserGoods.GoodsId "string"}}
+                    <td style="font-size: 85%; padding: 8px;">
+                        <p><b>{{RedemptionOrder.Message}}</b></p>
+                        <p>All Cash Reward redemptions for Deposit to Checking are final. We are unable
+                            to process refunds, exchanges or cancellations.</p>
+                        <p><b>General</b></p>
+                        <ul>
+                            <li>Cash Rewards redemptions for a deposit into a checking account are
+                                generated as an ACH deposit to the designated account typically within
+                                4-7 business days.
+                            </li>
+                            <li>You must enter an accurate routing number and account number for your
+                                Cash Reward redemption to be processed correctly.
+                            </li>
+                            <li>If you would like to learn the exact date of when your transaction will
+                                be deposited to your account please contact your financial institution.
+                                Their contact information can be found on the back of your card.
+                            </li>
+                        </ul>
+                    </td>
+                {{/ifEquals}}
+
+                <!-- Deposit to Savings -->
+                {{#ifEquals "5148000000017" RedemptionOrder.UserGoods.GoodsId "string"}}
+                    <td style="font-size: 85%; padding: 8px;">
+                        <p><b>{{RedemptionOrder.Message}}</b></p>
+                        <p>All Cash Reward redemptions for Deposit to Savings are final. We are unable
+                            to process refunds, exchanges or cancellations.</p>
+                        <p><b>General</b></p>
+                        <ul>
+                            <li>Cash Rewards redemptions for a deposit into a savings account are
+                                generated as an ACH deposit to the designated account typically within
+                                4-7 business days.
+                            </li>
+                            <li>You must enter an accurate routing number and account number for your
+                                Cash Reward redemption to be processed correctly.
+                            </li>
+                            <li>If you would like to learn the exact date of when your transaction will
+                                be deposited to your account please contact your financial institution.
+                                Their contact information can be found on the back of your card.
+                            </li>
+                        </ul>
+                    </td>
+                {{/ifEquals}}
+
+                <!-- Mortgage -->
+                {{#ifEquals "5148000000022" RedemptionOrder.UserGoods.GoodsId "string"}}
+
+                    <!--Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                    {{#ifInList Member.catalogProgramId
+                                "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                        <td style="font-size: 85%; padding: 8px;">
+                            <p><b>{{RedemptionOrder.Message}}</b></p>
+                            <p>All Cash Reward redemptions towards your Home Mortgage<span
+                                    class="s2"> </span>are<span class="s2"> </span>final.<span
+                                    class="Apple-tab-span">  </span>We are<span class="s2"> </span>unable<span
+                                    class="s2"> </span>to process refunds, exchanges or cancellations.
+                            </p>
+
+                            <p><b>General</b></p>
+
+                            <ul class="ul1">
+                                <li class="li12">The Cash Rewards will reduce the principal amount due
+                                    but not count towards your monthly mortgage payment. You must
+                                    continue to make your regular monthly<span class="s2"> </span>mortgage
+                                    payments even though you selected this redemption<span
+                                            class="s2"> </span>option<span class="s3">.</span></li>
+                                <li class="li12">Cash Rewards redemptions for a principal reduction
+                                    payment towards your Home Mortgage will post within 5<span
+                                            class="s2"> </span>business<span
+                                            class="s2"> </span>days.<span
+                                            class="Apple-tab-span"> </span>Please contact us if your
+                                    payment<span class="s2"> </span>does<span
+                                            class="s2"> </span>not<span class="s2"> </span>post within 5
+                                    business<span class="s2"> </span>days.
+                                </li>
+                                <li class="li12">You must enter accurate mortgage account information
+                                    for your Cash<span class="s2"> </span>Reward redemption to be
+                                    processed<span class="s2"> </span>correctly.
+                                </li>
+                                <li class="li12">If your payment is rejected we will attempt to contact
+                                    you by phone, if contact is<span class="s2"> </span>not made your
+                                    redemption will be reversed and your points will be added back into
+                                    your Rewards account.
+                                </li>
+                            </ul>
+                        </td>
+                    {{else}}
+                        <td style="font-size: 85%; padding: 8px;">
+                            <p><b>{{RedemptionOrder.Message}}</b></p>
+                            <p>All Cash Reward redemptions towards your Home Mortgage are final. We are
+                                unable to process refunds, exchanges or cancellations.</p>
+                            <p><b>General</b></p>
+                            <ul>
+                                <li>The Cash Rewards will reduce the principal amount due but not count
+                                    towards your monthly mortgage payment. You must continue to make
+                                    your regular monthly mortgage payments even though you selected this
+                                    Cash Rewards option.
+                                </li>
+                                <li>Cash Rewards redemptions for a principal reduction payment towards
+                                    your Home Mortgage will post within 5 business days.
+                                </li>
+                                <li>You must enter accurate mortgage account information for your Cash
+                                    Reward redemption to be processed correctly.
+                                </li>
+                                <li>If your payment does not post within 5 business days please contact
+                                    your financial institution.
+                                </li>
+                                <li>If your payment is rejected your Financial Institution will attempt
+                                    to contact you by phone, if contact is not made your redemption will
+                                    be reversed and your points will be added back into your rewards
+                                    account.
+                                </li>
+                            </ul>
+                        </td>
+                    {{/ifInList}}
+                {{/ifEquals}}
+
+                <!-- Statement Credit -->
+                {{#ifEquals "5148000000031" RedemptionOrder.UserGoods.GoodsId "string"}}
+                    <td style="font-size: 85%; padding: 8px;">
+                        <p><b>{{RedemptionOrder.Message}}</b></p>
+                        <p>All Statement Credit redemptions are final. We are unable to process refunds,
+                            exchanges or cancellations.</p>
+                        <p><b>General</b></p>
+                        <ul>
+                            <li>Statement Credits will be applied to your Program card billing statement
+                                within 45 days of the redemption request.
+                            </li>
+                            <li>The Statement Credits will be issued to your Program card account only
+                                and may not be redeemed for cash equivalent, transferred to another card
+                                or used as a payment on other accounts.
+                            </li>
+                            <li>If you would like to learn the exact date the Statement Credit will post
+                                or was posted to your statement please contact your financial
+                                institution. Their contact number can be found on the back of your card.
+                            </li>
+                        </ul>
+                        <p><strong>STATEMENT CREDITS ARE NOT A PAYMENT. PLEASE REMEMBER TO SUBMIT YOUR
+                            NORMAL MONTHLY PAYMENT BEFORE YOUR NEXT DUE DATE.</strong></p>
+                    </td>
+                {{/ifEquals}}
+
+                <!-- Statement Credit SameDay -->
+                {{#ifEquals "5738000000013" RedemptionOrder.UserGoods.GoodsId "string"}}
+                    <td style="font-size: 85%; padding: 8px;">
+                        <p><b>{{RedemptionOrder.Message}}</b></p>
+                        <p>All Statement Credit redemptions are final. We are unable to process refunds,
+                            exchanges or cancellations.</p>
+                        <p><b>General</b></p>
+                        <ul>
+                            <li>Statement Credits will be applied to your Program card billing statement
+                                within 5 business days of the redemption request.
+                            </li>
+                            <li>The Statement Credits will be issued to your Program card account only
+                                and may not be redeemed for cash equivalent, transferred to another card
+                                or used as a payment on other accounts.
+                            </li>
+                            <li>If you would like to learn the exact date the Statement Credit will post
+                                or was posted to your statement please contact your financial
+                                institution. Their contact number can be found on the back of your card.
+                            </li>
+                        </ul>
+                        <p><strong>STATEMENT CREDITS ARE NOT A PAYMENT. PLEASE REMEMBER TO SUBMIT YOUR
+                            NORMAL MONTHLY PAYMENT BEFORE YOUR NEXT DUE DATE.</strong></p>
+                    </td>
+                {{/ifEquals}}
+
+                <!-- Hotels TAC -->
+
+                {{#if RedemptionOrder.UserGoods.OrderDetails.hotel}}
+                    <td style="font-size: 85%; padding: 8px;">
+                        <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                        {{#ifInList RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                    "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                            {{> partials/union-bank-hotels-tc}}
+                        {{else}}
+                            {{> partials/default-hotels-tc}}
+                        {{/ifInList}}
+                    </td>
+                {{/if}}
+
+                <!-- Events TAC -->
+
+                {{#if RedemptionOrder.UserGoods.OrderDetails.selectedTicket}}
+                    <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                    <td style="font-size: 85%; padding: 8px;">
+                        {{#ifInList RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                    "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                            {{> partials/union-bank-events-tc}}
+                        {{else}}
+                            {{> partials/default-events-tc}}
+                        {{/ifInList}}
+                    </td>
+                {{/if}}
+
+                <!-- Flights TAC -->
+
+                {{#if RedemptionOrder.UserGoods.OrderDetails.itinerary}}
+
+                    <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                    <td style="font-size: 85%; padding: 8px;">
+                        {{#ifInList RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                    "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                            {{> partials/union-bank-flights-tc}}
+                        {{else}}
+                            {{> partials/default-flights-tc}}
+                        {{/ifInList}}
+                    </td>
+                {{/if}}
+
+                <!-- Merchandise multiple items TAC -->
+
+                {{#if RedemptionOrder.UserGoods.[0]}}
+                    <td style=" font-size: 85%;padding: 0 8px 12px 8px;">
+
+                        <!-- Account Credits -->
+
+                        {{#if RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.isAccountCreditsAvailable}}
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+
+                                <!-- Mission -->
+
+                                <tr>
+                                    {{#ifEquals "4290033999177"
+                                                RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.programId
+                                                "string"}}
+                                        <th style="padding-top:16px"><b>Cash Back</b></th>
+                                    {{else}}
+                                        <th style="padding-top:16px"><b>Account Credits</b></th>
+                                    {{/ifEquals}}
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 16px; background-color: #f1f2f2;">
+
+                                        <!-- Xceed Signature -->
+                                        {{#ifEquals "6702042836105"
+                                                    RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.programId
+                                                    "string"}}
+                                            <p>All Account Credit redemptions are final. We are unable
+                                                to process refunds, exchanges or cancellations.</p>
+                                            <p><b>General</b></p>
+                                            <ul>
+                                                <li>Account Credits will be applied to your Xceed Visa
+                                                    Signature&#174; credit card billing statement within
+                                                    45 days of the redemption request.
+                                                </li>
+                                                <li>The Account Credit will be issued to your Xceed Visa
+                                                    Signature&#174; credit card only and may not be
+                                                    redeemed for cash equivalent, transferred to another
+                                                    card or used as a payment on other accounts.
+                                                </li>
+                                                <li>If you would like to learn the exact date the
+                                                    Account Credit will post or was posted to your
+                                                    statement please contact your financial institution.
+                                                    Their contact number can be found on the back of
+                                                    your Xceed Visa Signature&#174; credit card.
+                                                </li>
+                                            </ul>
+                                            <p><strong>ACCOUNT CREDITS ARE A STATEMENT CREDIT AND NOT A
+                                                PAYMENT. &nbsp;PLEASE REMEMBER TO SUBMIT YOUR NORMAL
+                                                MONTHLY PAYMENT BEFORE YOUR NEXT DUE DATE.</strong></p>
+                                        {{else}}
+
+                                            <!-- Mission -->
+
+                                            {{#ifEquals "4290033999177"
+                                                        RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.programId
+                                                        "string"}}
+                                                <p>All Cash Back redemptions are final. We are unable to
+                                                    process refunds, exchanges or cancellations.</p>
+                                                <p><b>General</b></p>
+                                                <ul>
+                                                    <li>Cash Back redemptions will be applied within 45
+                                                        days of the redemption request to your Mission
+                                                        Federal Checking Account; if you don't have one,
+                                                        it will be posted to your Mission Federal
+                                                        Savings Account.
+                                                    </li>
+                                                    <li>The Cash Back redemption will be issued to your
+                                                        Mission Federal Checking and/or Savings Account
+                                                        only and may not be redeemed for cash
+                                                        equivalent.
+                                                    </li>
+                                                    <li>If you would like to learn the exact date the
+                                                        funds will post or were posted to your statement
+                                                        please contact Mission Federal Credit Union.
+                                                        Their contact number can be found on the back of
+                                                        your card.
+                                                    </li>
+                                                </ul>
+                                            {{else}}
+
+                                                <!-- Purdue -->
+
+                                                {{#ifEquals "4290029198611"
+                                                            RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.programId
+                                                            "string"}}
+                                                    <p>Account Credits for your Purdue Federal Savings
+                                                        account can take up to 15 days from the day you
+                                                        placed the order to post.</p>
+                                                    <p>For further information and details on when this
+                                                        will post, please contact Purdue Federal Credit
+                                                        Union directly at <span class="nobr">765-497-3328</span>
+                                                        or <span class="nobr">800-627-3328</span>.</p>
+                                                {{else}}
+
+                                                    <!-- Purdue -->
+
+                                                    {{#ifEquals "4290023011598"
+                                                                RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.programId
+                                                                "string"}}
+                                                        <p>Account Credits for your Purdue Federal
+                                                            Savings account can take up to 15 days from
+                                                            the day you placed the order to post.</p>
+                                                        <p>For further information and details on when
+                                                            this will post, please contact Purdue
+                                                            Federal Credit Union directly at <span
+                                                                    class="nobr">765-497-3328</span> or
+                                                            <span class="nobr">800-627-3328</span>.</p>
+                                                    {{else}}
+
+                                                        <!-- Raymond James -->
+
+                                                        {{#ifEquals "4244035760365"
+                                                                    RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.programId
+                                                                    "string"}}
+                                                            <p>Account Credits will be automatically
+                                                                deposited into your Raymond James
+                                                                Capital Access Account within 30
+                                                                business days of the redemption request.
+                                                                The account credit will be issued to
+                                                                your account only and may not be
+                                                                redeemed for cash equivalent,
+                                                                transferred to another card or used as a
+                                                                payment on other accounts. If you would
+                                                                like to learn the exact date the account
+                                                                credit was deposited to your account,
+                                                                please contact your financial
+                                                                institution directly at <span
+                                                                        class="nobr">800-759-9797</span>.
+                                                            </p>
+                                                            <p>ACCOUNT CREDITS ARE A STATEMENT CREDIT
+                                                                AND NOT A PAYMENT. PLEASE REMEMBER TO
+                                                                SUBMIT YOUR NORMAL MONTHLY PAYMENT
+                                                                BEFORE YOUR NEXT DUE DATE.</p>
+                                                        {{else}}
+
+                                                            <!-- Raymond James -->
+
+                                                            {{#ifEquals "4290032621372"
+                                                                        RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.programId
+                                                                        "string"}}
+                                                                <p>Account Credits will be automatically
+                                                                    deposited into your Raymond James
+                                                                    Capital Access Account within 30
+                                                                    business days of the redemption
+                                                                    request. The account credit will be
+                                                                    issued to your account only and may
+                                                                    not be redeemed for cash equivalent,
+                                                                    transferred to another card or used
+                                                                    as a payment on other accounts. If
+                                                                    you would like to learn the exact
+                                                                    date the account credit was
+                                                                    deposited to your account, please
+                                                                    contact your financial institution
+                                                                    directly at <span class="nobr">800-759-9797</span>.
+                                                                </p>
+                                                                <p>ACCOUNT CREDITS ARE A STATEMENT
+                                                                    CREDIT AND NOT A PAYMENT. PLEASE
+                                                                    REMEMBER TO SUBMIT YOUR NORMAL
+                                                                    MONTHLY PAYMENT BEFORE YOUR NEXT DUE
+                                                                    DATE.</p>
+                                                            {{else}}
+                                                                <p>All Account Credit redemptions are
+                                                                    final. We are unable to process
+                                                                    refunds, exchanges or
+                                                                    cancellations.</p>
+
+                                                                <p><b>General</b></p>
+                                                                <ul>
+                                                                    <li>Account Credits will be applied
+                                                                        to your Program card billing
+                                                                        statement within 45 days of the
+                                                                        redemption request.
+                                                                    </li>
+                                                                    <li>The Account Credit will be
+                                                                        issued to your Program card
+                                                                        account only and may not be
+                                                                        redeemed for cash equivalent,
+                                                                        transferred to another card or
+                                                                        used as a payment on other
+                                                                        accounts.
+                                                                    </li>
+                                                                    <li>If you would like to learn the
+                                                                        exact date the Account Credit
+                                                                        will post or was posted to your
+                                                                        statement please contact your
+                                                                        financial institution. Their
+                                                                        contact number can be found on
+                                                                        the back of your card.
+                                                                    </li>
+                                                                </ul>
+                                                                <p><b>ACCOUNT CREDITS ARE A STATEMENT
+                                                                    CREDIT AND NOT A PAYMENT. PLEASE
+                                                                    REMEMBER TO SUBMIT YOUR NORMAL
+                                                                    MONTHLY PAYMENT BEFORE YOUR NEXT DUE
+                                                                    DATE.</b></p>
+                                                            {{/ifEquals}}
+                                                        {{/ifEquals}}
+                                                    {{/ifEquals}}
+                                                {{/ifEquals}}
+                                            {{/ifEquals}}
+                                        {{/ifEquals}}
+                                    </td>
+                                </tr>
+                            </table>
+                        {{/if}}
+
+                        <!-- Gift Cards -->
+
+                        {{#if RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.isGiftCardsAvailable}}
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>Gift Cards</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 16px; background-color: #f1f2f2;">
+                                        <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                                        {{#ifInList
+                                                RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                                "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                                            {{> partials/union-bank-gift-cards-tc}}
+                                        {{else}}
+                                            {{> partials/default-gift-cards-tc}}
+                                        {{/ifInList}}
+                                    </td>
+                                </tr>
+                            </table>
+                        {{/if}}
+
+                        <!-- Custom Store UNFCU International Gift Cards -->
+
+                        {{#ifEquals "4290029550973"
+                                    RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.programId
+                                    "string"}}
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>International Gift Card</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 16px; background-color: #f1f2f2;">
+                                        {{> partials/unfcu-int-gift-cards-tc}}
+                                    </td>
+                                </tr>
+                            </table>
+                        {{/ifEquals}}
+                        <!-- Donations -->
+                        {{#if RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.isDonationsAvailable}}
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>Donations</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 16px; background-color: #f1f2f2;">
+                                        {{> partials/default-donations-tc}}
+                                    </td>
+                                </tr>
+                            </table>
+                        {{/if}}
+                        <!-- Merchandise -->
+                        {{#if RedemptionOrder.UserGoods.[0].OrderDetails.programBlock.isMerchandiseAvailable}}
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>Merchandise</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 16px; background-color: #f1f2f2;">
+                                        <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                                        {{#ifInList Member.catalogProgramId
+                                                    "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                                            {{> partials/union-bank-merchandise-tc}}
+                                        {{else}}
+                                            {{> partials/default-merchandise-tc}}
+                                        {{/ifInList}}
+                                    </td>
+                                </tr>
+                            </table>
+                        {{/if}}
+                    </td>
+                {{/if}}
+
+                <!-- Merchandise single item TAC -->
+
+                {{#if RedemptionOrder.UserGoods.OrderDetails}}
+                    <td style=" font-size: 85%;padding: 0 8px 12px 8px;">
+
+                        <!-- Account Credits -->
+
+                        {{#if RedemptionOrder.UserGoods.OrderDetails.programBlock.isAccountCreditsAvailable}}
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+
+                                    <!-- Mission -->
+
+                                    {{#ifEquals "4290033999177"
+                                                RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                                "string"}}
+                                        <th style="padding-top:16px"><b>Cash Back</b></th>
+                                    {{else}}
+                                        <th style="padding-top:16px"><b>Account Credits</b></th>
+                                    {{/ifEquals}}
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 16px; background-color: #f1f2f2;">
+
+                                        <!--Xceed Signature -->
+
+                                        {{#ifEquals "6702042836105"
+                                                    RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                                    "string"}}
+                                            <p>All Account Credit redemptions are final. We are unable
+                                                to process refunds, exchanges or cancellations.</p>
+                                            <p><b>General</b></p>
+                                            <ul>
+                                                <li>Account Credits will be applied to your Xceed Visa
+                                                    Signature&#174; credit card billing statement within
+                                                    45 days of the redemption request.
+                                                </li>
+                                                <li>The Account Credit will be issued to your Xceed Visa
+                                                    Signature&#174; credit card only and may not be
+                                                    redeemed for cash equivalent, transferred to another
+                                                    card or used as a payment on other accounts.
+                                                </li>
+                                                <li>If you would like to learn the exact date the
+                                                    Account Credit will post or was posted to your
+                                                    statement please contact your financial institution.
+                                                    Their contact number can be found on the back of
+                                                    your Xceed Visa Signature&#174; credit card.
+                                                </li>
+                                            </ul>
+                                            <p><strong>ACCOUNT CREDITS ARE A STATEMENT CREDIT AND NOT A
+                                                PAYMENT. &nbsp;PLEASE REMEMBER TO SUBMIT YOUR NORMAL
+                                                MONTHLY PAYMENT BEFORE YOUR NEXT DUE DATE.</strong></p>
+                                        {{else}}
+                                            <!-- Mission -->
+                                            {{#ifEquals "4290033999177"
+                                                        RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                                        "string"}}
+                                                <p>All Cash Back redemptions are final. We are unable to
+                                                    process refunds, exchanges or cancellations.</p>
+                                                <p><b>General</b></p>
+                                                <ul>
+                                                    <li>Cash Back redemptions will be applied within 45
+                                                        days of the redemption request to your Mission
+                                                        Federal Checking Account; if you don't have one,
+                                                        it will be posted to your Mission Federal
+                                                        Savings Account.
+                                                    </li>
+                                                    <li>The Cash Back redemption will be issued to your
+                                                        Mission Federal Checking and/or Savings Account
+                                                        only and may not be redeemed for cash
+                                                        equivalent.
+                                                    </li>
+                                                    <li>If you would like to learn the exact date the
+                                                        funds will post or were posted to your statement
+                                                        please contact Mission Federal Credit Union.
+                                                        Their contact number can be found on the back of
+                                                        your card.
+                                                    </li>
+                                                </ul>
+                                            {{else}}
+                                                <!-- Purdue -->
+
+                                                {{#ifEquals "4290029198611"
+                                                            RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                                            "string"}}
+                                                    <p>Account Credits for your Purdue Federal Savings
+                                                        account can take up to 15 days from the day you
+                                                        placed the order to post.</p>
+                                                    <p>For further information and details on when this
+                                                        will post, please contact Purdue Federal Credit
+                                                        Union directly at <span class="nobr">765-497-3328</span>
+                                                        or <span class="nobr">800-627-3328</span>.</p>
+                                                {{else}}
+
+                                                    <!-- Purdue -->
+
+                                                    {{#ifEquals "4290023011598"
+                                                                RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                                                "string"}}
+                                                        <p>Account Credits for your Purdue Federal
+                                                            Savings account can take up to 15 days from
+                                                            the day you placed the order to post.</p>
+                                                        <p>For further information and details on when
+                                                            this will post, please contact Purdue
+                                                            Federal Credit Union directly at <span
+                                                                    class="nobr">765-497-3328</span> or
+                                                            <span class="nobr">800-627-3328</span>.</p>
+                                                    {{else}}
+
+                                                        <!-- Raymond James -->
+
+                                                        {{#ifEquals "4244035760365"
+                                                                    RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                                                    "string"}}
+                                                            <p>Account Credits will be automatically
+                                                                deposited into your Raymond James
+                                                                Capital Access Account within 30
+                                                                business days of the redemption request.
+                                                                The account credit will be issued to
+                                                                your account only and may not be
+                                                                redeemed for cash equivalent,
+                                                                transferred to another card or used as a
+                                                                payment on other accounts. If you would
+                                                                like to learn the exact date the account
+                                                                credit was deposited to your account,
+                                                                please contact your financial
+                                                                institution directly at <span
+                                                                        class="nobr">800-759-9797</span>.
+                                                            </p>
+                                                            <p>ACCOUNT CREDITS ARE A STATEMENT CREDIT
+                                                                AND NOT A PAYMENT. PLEASE REMEMBER TO
+                                                                SUBMIT YOUR NORMAL MONTHLY PAYMENT
+                                                                BEFORE YOUR NEXT DUE DATE.</p>
+                                                        {{else}}
+
+                                                            <!-- Raymond James -->
+
+                                                            {{#ifEquals "4290032621372"
+                                                                        RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                                                        "string"}}
+                                                                <p>Account Credits will be automatically
+                                                                    deposited into your Raymond James
+                                                                    Capital Access Account within 30
+                                                                    business days of the redemption
+                                                                    request. The account credit will be
+                                                                    issued to your account only and may
+                                                                    not be redeemed for cash equivalent,
+                                                                    transferred to another card or used
+                                                                    as a payment on other accounts. If
+                                                                    you would like to learn the exact
+                                                                    date the account credit was
+                                                                    deposited to your account, please
+                                                                    contact your financial institution
+                                                                    directly at <span class="nobr">800-759-9797</span>.
+                                                                </p>
+                                                                <p>ACCOUNT CREDITS ARE A STATEMENT
+                                                                    CREDIT AND NOT A PAYMENT. PLEASE
+                                                                    REMEMBER TO SUBMIT YOUR NORMAL
+                                                                    MONTHLY PAYMENT BEFORE YOUR NEXT DUE
+                                                                    DATE.</p>
+                                                            {{else}}
+                                                                <p>All Account Credit redemptions are
+                                                                    final. We are unable to process
+                                                                    refunds, exchanges or
+                                                                    cancellations.</p>
+                                                                <p><b>General</b></p>
+                                                                <ul>
+                                                                    <li>Account Credits will be applied
+                                                                        to your Program card billing
+                                                                        statement within 45 days of the
+                                                                        redemption request.
+                                                                    </li>
+                                                                    <li>The Account Credit will be
+                                                                        issued to your Program card
+                                                                        account only and may not be
+                                                                        redeemed for cash equivalent,
+                                                                        transferred to another card or
+                                                                        used as a payment on other
+                                                                        accounts.
+                                                                    </li>
+                                                                    <li>If you would like to learn the
+                                                                        exact date the Account Credit
+                                                                        will post or was posted to your
+                                                                        statement please contact your
+                                                                        financial institution. Their
+                                                                        contact number can be found on
+                                                                        the back of your card.
+                                                                    </li>
+                                                                </ul>
+                                                                <p><b>ACCOUNT CREDITS ARE A STATEMENT
+                                                                    CREDIT AND NOT A PAYMENT. PLEASE
+                                                                    REMEMBER TO SUBMIT YOUR NORMAL
+                                                                    MONTHLY PAYMENT BEFORE YOUR NEXT DUE
+                                                                    DATE.</b></p>
+                                                            {{/ifEquals}}
+                                                        {{/ifEquals}}
+                                                    {{/ifEquals}}
+                                                {{/ifEquals}}
+                                            {{/ifEquals}}
+                                        {{/ifEquals}}
+                                    </td>
+                                </tr>
+                            </table>
+                        {{/if}}
+
+                        <!-- Gift Cards -->
+
+                        {{#if RedemptionOrder.UserGoods.OrderDetails.programBlock.isGiftCardsAvailable}}
+
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>Gift Cards</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 16px; background-color: #f1f2f2;">
+                                        <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                                        {{#ifInList
+                                                RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                                "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                                            {{> partials/union-bank-gift-cards-tc}}
+                                        {{else}}
+                                            {{> partials/default-gift-cards-tc}}
+                                        {{/ifInList}}
+                                    </td>
+                                </tr>
+                            </table>
+
+                        {{/if}}
+
+                        <!-- Custom Store UNFCU International Gift Cards -->
+
+                        {{#ifEquals "4290029550973"
+                                    RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                    "string"}}
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>International Gift Card</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 16px; background-color: #f1f2f2;">
+                                        {{> partials/unfcu-int-gift-cards-tc}}
+                                    </td>
+                                </tr>
+                            </table>
+                        {{/ifEquals}}
+
+                        <!-- Donations -->
+                        {{#if RedemptionOrder.UserGoods.OrderDetails.programBlock.isDonationsAvailable}}
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>Donations</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 16px; background-color: #f1f2f2;">
+                                        {{> partials/default-donations-tc}}
+                                    </td>
+                                </tr>
+                            </table>
+                        {{/if}}
+                        <!-- Merchandise -->
+                        {{#if RedemptionOrder.UserGoods.OrderDetails.programBlock.isMerchandiseAvailable}}
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>Merchandise</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 16px; background-color: #f1f2f2;">
+                                        <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                                        {{#ifInList
+                                                RedemptionOrder.UserGoods.OrderDetails.programBlock.programId
+                                                "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                                            {{> partials/union-bank-merchandise-tc}}
+                                        {{else}}
+                                            {{> partials/default-merchandise-tc}}
+                                        {{/ifInList}}
+                                    </td>
+                                </tr>
+                            </table>
+                        {{/if}}
+                    </td>
+                {{/if}}
+
+                <!-- Offline Travel TAC - Hotels and Flights -->
+
+                {{#if RedemptionOrder.UserGoods.GoodsDescription}}
+                    {{#ifEquals "Offline Travel" RedemptionOrder.UserGoods.GoodsDescription "string"}}
+                        <td>
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>Hotels</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 85%; padding: 8px;">
+                                        <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                                        {{#ifInList RedemptionOrder.RedemptionItem.ProgramId
+                                                    "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                                            {{> partials/union-bank-hotels-tc}}
+                                        {{else}}
+                                            {{> partials/default-hotels-tc}}
+                                        {{/ifInList}}
+                                    </td>
+                                </tr>
+                            </table>
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>Flights</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 85%; padding: 8px;">
+                                        <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                                        {{#ifInList RedemptionOrder.RedemptionItem.ProgramId
+                                                    "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                                            {{> partials/union-bank-flights-tc}}
+                                        {{else}}
+                                            {{> partials/default-flights-tc}}
+                                        {{/ifInList}}
+                                    </td>
+                                </tr>
+                            </table>
+                            <table border="0" width="744" cellspacing="0" cellpadding="0" align="left"
+                                   style="text-align: left;">
+                                <tr>
+                                    <th style="padding-top:16px"><b>Cruises</b></th>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 85%; padding: 8px;">
+                                        {{> partials/default-cruises-tc}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    {{/ifEquals}}
+
+                    <!-- Offline Events TAC -->
+
+                    {{#ifEquals "Offline Event Tickets" RedemptionOrder.UserGoods.GoodsDescription
+                                "string"}}
+                        <td style="font-size: 85%; padding: 8px;">
+                            <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                            {{#ifInList RedemptionOrder.RedemptionItem.ProgramId
+                                        "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                                {{> partials/union-bank-events-tc}}
+                            {{else}}
+                                {{> partials/default-events-tc}}
+                            {{/ifInList}}
+                        </td>
+                    {{/ifEquals}}
+
+                    <!-- Offline Activities TAC -->
+
+                    {{#ifEquals "Offline Activities" RedemptionOrder.UserGoods.GoodsDescription
+                                "string"}}
+                        <td style="font-size: 85%; padding: 8px;">
+                            {{> partials/default-activities-tc}}
+                        </td>
+                    {{/ifEquals}}
+
+                    <!-- Offline Gift Cards TAC -->
+
+                    {{#ifEquals RedemptionOrder.UserGoods.GoodsDescription "Offline Gift Cards"
+                                "string"}}
+                        <td style="font-size: 85%; padding: 8px;">
+                            <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                            {{#ifInList RedemptionOrder.RedemptionItem.ProgramId
+                                        "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                                {{> partials/union-bank-gift-cards-tc}}
+                            {{else}}
+                                {{> partials/default-gift-cards-tc}}
+                            {{/ifInList}}
+                        </td>
+                    {{/ifEquals}}
+
+                    <!-- Offline Merchandise TAC -->
+
+                    {{#ifEquals RedemptionOrder.UserGoods.GoodsDescription "Offline Merchandise"
+                                "string"}}
+                        <td style="font-size: 85%; padding: 8px;">
+                            <!-- Union Bank Custom TandC, IDs: 7392116284334, 7392116284283, 7392116284309, 7392116284297 -->
+                            {{#ifInList RedemptionOrder.RedemptionItem.ProgramId
+                                        "7392116284334,7392116284283,7392116284309,7392116284297"}}
+                                {{> partials/union-bank-merchandise-tc}}
+                            {{else}}
+                                {{> partials/default-merchandise-tc}}
+                            {{/ifInList}}
+                        </td>
+                    {{/ifEquals}}
+                {{/if}}
+            </tr>
+        </table>
+    </td>
+</tr>

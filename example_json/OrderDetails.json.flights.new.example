@@ -1,0 +1,117 @@
+{
+   "type":"flights",
+   "version":2,
+   "itinerary":{
+      "travelers":[
+         {
+            "firstName":"jonathan",
+            "lastName":"salas",
+            "middleName":null,
+            "gender":"MALE",
+            "phoneNumber":"9566509163",
+            "redressNumber":null,
+            "dateOfBirth":"1992-07-18",
+            "type":"ADULT",
+            "seatType": "Any"
+         },
+        {
+          "firstName":"Fusion",
+          "lastName":"Energy",
+          "middleName":null,
+          "gender":"MALE",
+          "phoneNumber":"9566509163",
+          "redressNumber":null,
+          "dateOfBirth":"1992-07-18",
+          "type":"ADULT",
+          "seatType": "Window"
+        }
+      ],
+      "sectors":[
+         {
+            "airLegId":"AA_6065_IAH_201710101420_LAX_201710101602",
+            "initialOrigin":"IAH",
+            "initialOriginLabel":null,
+            "finalDestination":"LAX",
+            "finalDestinationLabel":null,
+            "totalTime":"3 hrs 42 mins",
+            "bookingAirline":null,
+            "bookingAirlineLabel":"American Airlines",
+            "totalPrice":13538,
+            "departureTime":null,
+            "arrivalTime":null,
+            "numberOfStops":0,
+            "airSegments":[
+               {
+                  "key":null,
+                  "carrier":"AA",
+                  "carrierLabel":"American Airlines",
+                  "flightNumber":"6065",
+                  "equipment":null,
+                  "flightTime":"222",
+                  "layoverTime":"0",
+                  "changeOfPlane":false,
+                  "fareClass":"Economy",
+                  "classOfService":"S",
+                  "numberOfStops":null,
+                  "distance":1383,
+                  "departureDetails":{
+                     "airportDetail":{
+                        "airportCode":"IAH",
+                        "name":"Houston George Bush Intercont Arpt",
+                        "terminal":null
+                     },
+                     "locationDetail":{
+                        "city":"HOU",
+                        "state":"TX",
+                        "countryCode":"US",
+                        "country":"United States"
+                     },
+                     "dateTime":"2017-10-10T14:20:00.000"
+                  },
+                  "nestedDetails":null,
+                  "arrivalDetails":{
+                     "airportDetail":{
+                        "airportCode":"LAX",
+                        "name":"Los Angeles Intl Arpt",
+                        "terminal":null
+                     },
+                     "locationDetail":{
+                        "city":"LAX",
+                        "state":"CA",
+                        "countryCode":"US",
+                        "country":"United States"
+                     },
+                     "dateTime":"2017-10-10T16:02:00.000"
+                  },
+                  "connection":false
+               }
+            ]
+         }
+      ],
+      "searchId":"IAH_LAX_2017-10-10_2017-10-18_ECONOMY_-1_null_1_0_0_0_0",
+      "uamInitials":null
+   },
+   "flightsVersion":2,
+   "uamInitials":null,
+   "dtb":null,
+   "programBlock":{
+      "programId":1899000000033,
+      "programLogo":"firstdata.jpg",
+      "clientPhone":"888-888-8888 opt 2",
+      "clientPhoneAlt":"",
+      "contactEmail":"Clientsupport@email.com",
+      "contactEmailAlt":"Alternatesupport@email.com",
+      "supportPhone":"888-555-9999",
+      "supportPhoneAlt":"999-111-2222",
+      "redemptionDate":null,
+      "clientStorePid":null,
+      "giftCardsAvailable":null,
+      "merchandiseAvailable":null,
+      "donationsAvailable":null,
+      "clientStoreAvailable":null
+   },
+   "universalRecordLocatorCode":"F22NVF",
+   "universalRecordVersion":0,
+   "providerCode":"1V",
+   "providerReservationCode":"MSD9NU"
+}

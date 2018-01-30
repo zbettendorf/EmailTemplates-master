@@ -1,0 +1,1 @@
+java -jar handlebars-proto-2.0.0.jar -dir ..

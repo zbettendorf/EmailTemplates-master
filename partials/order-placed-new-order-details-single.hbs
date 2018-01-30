@@ -1,0 +1,636 @@
+{{#ifEquals RedemptionOrder.UserGoods.OrderDetails.type "merchandise" "string"}}
+    <tr>
+        <td colspan="2">
+            <table border="0" cellspacing="0" cellpadding="0" align="left" class="details-table"
+                   width="760">
+                <tr>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        DESCRIPTION
+                    </th>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        QTY
+                    </th>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        POINTS
+                    </th>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        TOTAL
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="4" style="background: #ffffff;height: 10px;"></td>
+                </tr>
+                <tr>
+                    {{#if RedemptionOrder.UserGoods.GoodsDescription}}
+                        <td style="color: #363636;background-color: #f1f2f2;padding: 16px 10px;text-align: left;font-size: 116%;">
+                            {{{RedemptionOrder.UserGoods.GoodsDescription}}}
+                            {{#if RedemptionOrder.UserGoods.OrderDetails.variantOption}}
+                                <br/>{{RedemptionOrder.UserGoods.OrderDetails.variantOption}}{{/if}}
+                            {{#if RedemptionOrder.UserGoods.OrderDetails.ispStore}}
+                                <br/>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;Pick Up Location:</span><br/>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;{{RedemptionOrder.UserGoods.OrderDetails.ispStore.name}}</span><br/>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;Phone: {{formatPhone
+                                        RedemptionOrder.UserGoods.OrderDetails.ispStore.address.phoneNumber}}</span><br/>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;{{RedemptionOrder.UserGoods.OrderDetails.ispStore.address.address1}}</span><br/>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;{{RedemptionOrder.UserGoods.OrderDetails.ispStore.address.address2}}</span><br/>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;{{RedemptionOrder.UserGoods.OrderDetails.ispStore.address.city}}
+                                    , {{RedemptionOrder.UserGoods.OrderDetails.ispStore.address.region}}  {{RedemptionOrder.UserGoods.OrderDetails.ispStore.adddress.postalCode}}</span>
+                            {{/if}}
+                            {{#ifEquals "E" RedemptionOrder.UserGoods.OrderDetails.deliveryMethod
+                                        "string"}}
+                                <br/>
+                                <span><img class="gyft-small" width="28" height="18"
+                                           src="https://content.revloyalty.com/rev/firstdata/prod/logos/gyft-small.png"
+                                           alt="gyft" title="gyft"/></span><br/>
+                                <span>{{RedemptionOrder.UserGoods.OrderDetails.electronicDeliveryInfo.email}}</span>
+                            {{/ifEquals}}
+                        </td>
+                        <td style="color: #231f20;background-color: #f1f2f2;padding: 16px 10px;text-align: center;font-size: 116%;">{{RedemptionOrder.RedemptionItem.Quantity}}</td>
+                        <td style="color: #231f20;background-color: #f1f2f2;padding: 16px 10px;text-align: center;font-size: 116%;">{{numberFormat
+                                RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}
+                            Points
+                        </td>
+                        <td style="color: #231f20;background-color: #f1f2f2;padding: 16px 10px;text-align: center;font-size: 116%;">{{numberFormat
+                                RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}
+                            Points
+                        </td>
+                    {{else}}
+                        <td style="color: #363636;background-color: #ddd;padding: 16px 10px;text-align: left;font-size: 116%;">
+                            {{RedemptionOrder.UserGoods.GoodsDescription}}
+                        </td>
+                        <td style="color: #231f20;background-color: #ddd;padding: 16px 10px;text-align: center;font-size: 116%;">{{RedemptionOrder.RedemptionItem.Quantity}}</td>
+                        <td style="color: #231f20;background-color: #ddd;padding: 16px 10px;text-align: center;font-size: 116%;">{{numberFormat
+                                RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}
+                            Points
+                        </td>
+                        <td style="color: #231f20;background-color: #ddd;padding: 16px 10px;text-align: center;font-size: 116%;">{{numberFormat
+                                RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}
+                            Points
+                        </td>
+                    {{/if}}
+                </tr>
+                <tr>
+                    <td colspan="4"
+                        style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"
+                        style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 0;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #5b5b5b;"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"
+                        style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"
+                        style="color: #231f20; padding: 8px; text-align: right; font-size: 116%">
+                        <strong>TOTAL POINTS USED:</strong> {{numberFormat RedemptionOrder.Quantity
+                                                                           "###,###.###"}}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    {{#if RedemptionOrder.UserGoods.OrderDetails.ispStore}}
+        <tr>
+            <td colspan="2">
+                <table border="0" width="760" cellspacing="0" cellpadding="0" align="left"
+                       class="header-4">
+                    <tr>
+                        <th class="block-header"
+                            style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                            DELIVERY INFORMATION &mdash; SPECIAL INSTRUCTIONS
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="line-height: 18px; padding: 12px 8px;">
+                            <p style="margin: 0; padding: 0;">Do not attempt to pick up items until
+                                you receive an email stating that your item is ready for pick
+                                up.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    {{/if}}
+
+    <tr>
+        <td colspan="2">
+            <table border="0" width="760" cellspacing="0" cellpadding="0" align="left"
+                   class="header-5">
+                <tr>
+                    <th class="block-header"
+                        style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                        CONTACT/SHIPPING INFORMATION
+                    </th>
+                </tr>
+                <tr>
+                    <td style="line-height: 18px; padding: 12px 8px;">
+                        <p style="margin: 0; padding: 0;">
+                            {{#if Fulfillment.CompanyName}}{{Fulfillment.CompanyName}}<br/>{{/if}}
+                            {{Fulfillment.FirstName}} {{#if Fulfillment.MiddleName}}
+                            {{Fulfillment.MiddleName}}{{/if}} {{Fulfillment.LastName}}<br/>
+                            {{Fulfillment.FulfilmentAddress.Street}}{{#if
+                                Fulfillment.FulfilmentAddress.StreetLine2}}<br/>
+                            {{Fulfillment.FulfilmentAddress.StreetLine2}}{{/if}}<br/>
+                            {{Fulfillment.FulfilmentAddress.City}}
+                            , {{Fulfillment.FulfilmentAddress.Province}}
+                            &nbsp;&nbsp;{{Fulfillment.FulfilmentAddress.PostalCode}}{{#if
+                                Fulfillment.FulfilmentAddress.PostalCode4}}
+                            -{{Fulfillment.FulfilmentAddress.PostalCode4}}{{/if}}<br/>
+                            {{formatPhone Fulfillment.TelephoneNumber}}</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- Contact Us -->
+    {{> partials/order-placed-contact-us-v1}}
+{{/ifEquals}}
+
+{{#ifEquals RedemptionOrder.UserGoods.OrderDetails.type "flights" "string"}}
+    <tr>
+        <td colspan="2">
+            <table border="0" cellspacing="0" cellpadding="0" align="left" width="760">
+                <tr>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: left;text-transform: uppercase;font-size: 108%;">
+                        FLIGHT INFORMATION
+                    </th>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">Reservation
+                        Number: {{RedemptionOrder.UserGoods.PartnerFulfillmentNumber}}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {{#each RedemptionOrder.UserGoods.OrderDetails.itinerary.sectors}}
+        <tr>
+            <td colspan="2">
+                <table border="0" cellspacing="0" cellpadding="0" align="left" width="760">
+                    <tr>
+                        <td style="padding: 8px;">
+                            <b style="font-size: 123.1%">{{this.bookingAirlineLabel}}
+                                <span>&nbsp;&nbsp;&nbsp;{{this.totalTime}}</span>
+                            </b><span>&nbsp;&nbsp;&nbsp;
+                            {{#if this.numberOfStops}}
+                                Stops {{../numberOfStops}} ({{../stopslist}})
+                            {{else}}
+                                Non-Stop Flight
+                            {{/if}}
+                                            </span><br/>
+                            <span>Flight #
+                                {{#if this.airSegments}}
+                                    {{this.[0].flightNumber}}
+                                {{/if}}
+                                &nbsp;&nbsp;&nbsp;{{this.airSegments.[0].fareClass}}
+                                &nbsp;&nbsp;&nbsp;</span><br/>
+                            <span>{{stringDateFormat this.airSegments.[0].departureDetails.dateTime "full"}}</span>
+                            <table border="0" cellspacing="0" cellpadding="0"
+                                   style="margin: 8px 8px 8px 16px;">
+                                <tr>
+                                    <td align="center"
+                                        style="padding: 0 8px;">{{stringDateFormat this.airSegments.[0].departureDetails.dateTime "full"}}
+                                        <br/>{{this.airSegments.[0].departureDetails.airportDetail.airportCode}}
+                                    </td>
+                                    <td align="center" style="padding: 0 8px;">&rarr;</td>
+                                    <td align="center"
+                                        style="padding: 0 8px;">{{stringDateFormat this.airSegments.[0].arrivalDetails.dateTime "full"}}
+                                        <br/>{{this.airSegments.[0].arrivalDetails.airportDetail.airportCode}}
+                                    </td>
+                                </tr>
+                            </table>
+                            <span>{{this.airSegments.[0].departureDetails.airportDetail.name}}
+                                ({{this.airSegments.[0].departureDetails.airportDetail.airportCode}}
+                                )</span><br/>
+                            <span>{{this.airSegments.[0].arrivalDetails.airportDetail.name}}
+                                ({{this.airSegments.[0].arrivalDetails.airportDetail.airportCode}}
+                                )</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 60px;">
+                            <table border="0" cellspacing="0" cellpadding="8" width="700">
+                                <tr>
+                                    <td colspan="3" style=" background-color: #777; color:#fff;">
+                                        <b>Flight Details</b><br/>
+                                    </td>
+                                </tr>
+                                {{#if this.airSegments}}
+                                    {{#each this}}
+                                        {{> partials/air-segment}}
+                                    {{/each}}
+                                {{/if}}
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"
+                            style="background: #ffffff;height: 16px; border-bottom: 1px solid #363636"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    {{/each}}
+    <tr>
+        <td colspan="2">
+            <table border="0" width="760" cellspacing="0" cellpadding="8" align="left">
+                <tr>
+                    <th class="block-header" colspan="3"
+                        style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                        TRAVELER INFORMATION
+                    </th>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        {{#each RedemptionOrder.UserGoods.OrderDetails.itinerary.travelers }}
+                            <span>{{this.type}}{{#if
+                                    this.seatType}}
+                                - {{this.seatType}}{{/if}}</span><br/>
+                            {{#if RedemptionOrder.UserGoods.OrderDetails.itinerary.uamInitials}}
+                                <span>Unaccompanied Minor</span><br/>
+                            {{/if}}
+                            <span>{{this.firstName}} {{#if
+                                    this.middleName}}
+                                {{this.middleName}}{{/if}} {{this.lastName}}</span><br/>
+                            <span>{{this.gender}}
+                                - {{this.dateOfBirth}}</span><br/>
+                            {{#if this.redressNumber}}
+                                <span>Redress #: {{this.redressNumber}}</span><br/>
+                            {{/if}}
+                        {{/each}}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="background: #ffffff;height: 10px;"></td>
+    </tr>
+    <tr>
+        <td colspan="2"
+            style="color: #231f20;background-color: #f1f2f2;padding: 8px; text-align: right; font-size: 116%">
+            <strong>TOTAL POINTS USED:</strong> {{numberFormat
+                RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="background: #ffffff;height: 10px;"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-4">
+                <tr>
+                    <th class="block-header"
+                        style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                        DELIVERY INFORMATION &mdash; SPECIAL INSTRUCTIONS
+                    </th>
+                </tr>
+                <tr>
+                    <td style="line-height: 1.2; padding: 12px 8px; font-size: 93%;">
+                        <p>Traveler Information:<br/>
+                            <a href="http://www.tsa.gov/traveler-information/" style="color: #000;">http://www.tsa.gov/traveler-information/</a>
+                        </p>
+
+                        <p>Airline baggage and ancillary fee information:<br/>
+                            <a href="http://exploreflightfees.com/"
+                               style="color: #000;">http://exploreflightfees.com/</a>
+                        </p>
+
+                        <p>Whether or not the flight itinerary selected is subject to insecticide
+                            spraying prior to the flight or while you are on the aircraft, Federal law
+                            requires that I refer you to DOT's disinsection website at:<br/>
+                            <a href="http://www.dot.gov/office-policy/aviation-policy/aircraft-disinsection-requirements"
+                               style="color: #000;">http://www.dot.gov/office-policy/aviation-policy/aircraft-disinsection-requirements</a>
+                        </p>
+
+                        <p>Under federal law, passengers are prohibited from bringing hazardous
+                            materials on the aircraft. Please visit FAA's prohibited items webpage for
+                            more information.<br/>
+                            <a href="http://www.faa.gov/about/initiatives/hazmat_safety"
+                               style="color: #000;">http://www.faa.gov/about/initiatives/hazmat_safety</a>
+                        <p>
+
+                        <p>This travel agency acts only as agent in all matters connected with the
+                            making and securing of reservations for transportation.</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-5">
+                <tr>
+                    <th class="block-header"
+                        style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                        CONTACT INFORMATION
+                    </th>
+                </tr>
+                <tr>
+                    <td style="line-height: 18px; padding: 12px 8px;">
+                        <p style="margin: 0; padding: 0;">
+                            {{#if Fulfillment.CompanyName}}{{Fulfillment.CompanyName}}<br/>{{/if}}
+                            {{Fulfillment.FirstName}} {{#if Fulfillment.MiddleName}}
+                            {{Fulfillment.MiddleName}}{{/if}} {{Fulfillment.LastName}}<br/>
+                            {{formatPhone Fulfillment.TelephoneNumber}}</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- Contact Us -->
+    {{> partials/order-placed-contact-us-v1}}
+{{/ifEquals}}
+
+{{#ifEquals RedemptionOrder.UserGoods.OrderDetails.type "hotels" "string"}}
+    <tr>
+        <td colspan="2">
+            <table border="0" cellspacing="0" cellpadding="0" width="760" align="left"
+                   class="details-table">
+                <tr>
+                    <th colspan="2"
+                        style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: left;text-transform: uppercase; font-size: 108%;">
+                        HOTEL INFORMATION
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding: 8px;">
+                        <b>Reservation
+                            Number: </b>{{RedemptionOrder.UserGoods.PartnerFulfillmentNumber}}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding: 8px;">
+                        <b style="font-size: 123.1%">{{RedemptionOrder.UserGoods.OrderDetails.hotel.name}}</b><br/>
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.hotel.location.address1}}</span><br/>
+                        {{#if RedemptionOrder.UserGoods.OrderDetails.hotel.location.address2}}
+                            <span>{{RedemptionOrder.UserGoods.OrderDetails.hotel.location.address2}}</span><br/>
+                        {{/if}}
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.hotel.location.city}}{{#if
+                                RedemptionOrder.UserGoods.OrderDetails.hotel.location.state}},
+                            {{RedemptionOrder.UserGoods.OrderDetails.hotel.location.state}}{{/if}}
+                            &nbsp;&nbsp;{{RedemptionOrder.UserGoods.OrderDetails.hotel.location.postalCode}}</span><br/>
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.hotel.location.country}}</span><br/>
+                        <span>{{formatPhone RedemptionOrder.UserGoods.OrderDetails.hotel.phone}}</span>
+                    </td>
+                </tr>
+                {{#if RedemptionOrder.UserGoods.OrderDetails.hotel.checkinInstructions}}
+                    <tr>
+                        <td colspan="2" style="padding: 8px;">
+                            <b>Check-In Instructions:</b><br/>
+                            <span>{{RedemptionOrder.UserGoods.OrderDetails.hotel.checkinInstructions}}</span><br/>
+                        </td>
+                    </tr>
+                {{/if}}
+                {{#if RedemptionOrder.UserGoods.OrderDetails.hotel.specialCheckinInstructions}}
+                    <tr>
+                        <td colspan="2" style="padding: 8px;">
+                            <b>Special Check-In Instructions:</b><br/>
+                            <span>{{RedemptionOrder.UserGoods.OrderDetails.hotel.specialCheckinInstructions}}</span>
+                        </td>
+                    </tr>
+                {{/if}}
+                <tr>
+                    <td style="padding: 8px;">
+                        <b>Check-In:</b><br/>
+                            <span>{{stringDateFormat
+                                    RedemptionOrder.UserGoods.OrderDetails.hotel.checkinDate
+                                    "full"}}</span><br/>
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.hotel.checkinTime}}</span>
+                    </td>
+                    <td style="padding: 8px;">
+                        <b>Check-Out:</b><br/>
+                            <span>{{stringDateFormat
+                                    RedemptionOrder.UserGoods.OrderDetails.hotel.checkoutDate
+                                    "full"}}</span><br/>
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.hotel.checkoutTime}}</span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table border="0" cellspacing="0" cellpadding="0" width="760" align="left"
+                   class="details-table">
+                <tr>
+                    <th colspan="2"
+                        style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: left;text-transform: uppercase;font-size: 108%;">
+                        GUEST INFORMATION
+                    </th>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">
+                        <b>Room 1</b><br/>
+                        {{#if RedemptionOrder.UserGoods.OrderDetails.rooms.[0].confirmationNumber}}
+                            <span>Confirmation Number: {{RedemptionOrder.UserGoods.OrderDetails.rooms.[0].confirmationNumber}}</span><br/>
+                        {{/if}}
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.rooms.[0].description}}</span><br/>
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.rooms.[0].guestFirstName}} {{#if
+                                RedemptionOrder.UserGoods.OrderDetails.rooms.[0].guestMiddleName}}
+                            {{RedemptionOrder.UserGoods.OrderDetails.rooms.[0].guestMiddleName}}{{/if}} {{RedemptionOrder.UserGoods.OrderDetails.rooms.[0].guestLastName}}</span><br/>
+                        <span>Adults: {{RedemptionOrder.UserGoods.OrderDetails.rooms.[0].numberOfAdults}}</span><br/>
+                        {{#if RedemptionOrder.UserGoods.OrderDetails.rooms.[0].agesOfChildren}}
+                            <span>Children: {{RedemptionOrder.UserGoods.OrderDetails.rooms.[0].agesOfChildren}}
+                                <span>Ages:&nbsp;
+                                    {{#each RedemptionOrder.UserGoods.OrderDetails.rooms.[0].agesOfChildren}}{{#if
+                                            @index}}, {{/if}}
+                                        {{this}}{{/each}}
+                                            </span></span><br/>
+                        {{/if}}
+                        <span>Points: {{numberFormat
+                                RedemptionOrder.RedemptionItem.RedemptionQuantity
+                                "###,###.###"}}</span><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background: #ffffff;height: 10px;"></td>
+                </tr>
+                {{#if RedemptionOrder.UserGoods.OrderDetails.rooms.[0].fees}}
+                    {{#each RedemptionOrder.UserGoods.OrderDetails.rooms.[0].fees}}
+                        <tr>
+                            <td colspan="2" style="padding: 8px; text-align: right;">
+                                <strong>{{this.type}}:</strong> {{this.amount}}
+                            </td>
+                        </tr>
+                    {{/each}}
+                {{/if}}
+                {{#if RedemptionOrder.UserGoods.OrderDetails.rooms.[0].fees}}
+                    <tr>
+                        <td colspan="2"
+                            style="color: #231f20;background-color: #f1f2f2;padding: 8px; text-align: right; font-size: 116%">
+                            <strong>TOTAL DUE ON
+                                ARRIVAL:</strong> {{RedemptionOrder.UserGoods.OrderDetails.rooms.[0].totalFees}}
+                        </td>
+                    </tr>
+                {{/if}}
+                <tr>
+                    <td colspan="2"
+                        style="color: #231f20;background-color: #f1f2f2;padding: 8px; text-align: right; font-size: 116%">
+                        <strong>TOTAL POINTS USED:</strong> {{numberFormat
+                            RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>The points used to purchase this booking will be applied to the total cost of
+                            the reservation along with any applicable taxes and fees.
+                            {{#if RedemptionOrder.UserGoods.TotalTaxAmount}}
+                                Using these points, a payment will be collected in the amount
+                                of {{RedemptionOrder.UserGoods.TotalTaxAmount}} to suffice the
+                                aforementioned charges.
+                            {{/if}}
+                        </p>
+                        <p>
+                            The supplier of this hotel reservation is Travelscape LLC.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-5">
+                <tr>
+                    <th class="block-header"
+                        style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                        CONTACT INFORMATION
+                    </th>
+                </tr>
+                <tr>
+                    <td style="line-height: 18px; padding: 12px 8px;">
+                        <p style="margin: 0; padding: 0;">
+                            {{#if Fulfillment.CompanyName}}{{Fulfillment.CompanyName}}<br/>{{/if}}
+                            {{Fulfillment.FirstName}} {{#if Fulfillment.MiddleName}}
+                            {{Fulfillment.MiddleName}}{{/if}} {{Fulfillment.LastName}}<br/>
+                            {{formatPhone Fulfillment.TelephoneNumber}}</p>
+                            {{Fulfillment.EmailAddress}}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- Contact Us -->
+    {{> partials/order-placed-contact-us-v1}}
+{{/ifEquals}}
+
+{{#ifEquals RedemptionOrder.UserGoods.OrderDetails.type "events" "string"}}
+    <tr>
+        <td colspan="2">
+            <table border="0" cellspacing="0" cellpadding="0" width="760" align="left"
+                   class="details-table">
+                <tr>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        DESCRIPTION
+                    </th>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        QTY
+                    </th>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        POINTS
+                    </th>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        TOTAL
+                    </th>
+                </tr>
+
+                <tr>
+                    <td style="padding: 8px; vertical-align: top;">
+                        <b style="font-size: 123.1%">{{RedemptionOrder.UserGoods.OrderDetails.event.name}}</b><br/>
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.venue.name}}</span><br/>
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.venue.address.address1}}</span><br/>
+                        {{#if RedemptionOrder.UserGoods.OrderDetails.venue.address.address2}}
+                            <span>{{RedemptionOrder.UserGoods.OrderDetails.venue.address.address2}}</span><br/>
+                        {{/if}}
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.venue.address.city}}{{#if
+                                RedemptionOrder.UserGoods.OrderDetails.venue.address.region}},
+                            {{RedemptionOrder.UserGoods.OrderDetails.venue.address.region}}{{/if}}
+                            &nbsp;&nbsp;</span><br/>
+                        <span>{{RedemptionOrder.UserGoods.OrderDetails.venue.address.country}}</span><br/>
+                        <br/>
+                        <br/>
+                        <span>{{stringDateFormat RedemptionOrder.UserGoods.OrderDetails.event.date
+                                                 "full"}}
+                            at {{RedemptionOrder.UserGoods.OrderDetails.event.time}}</span><br/>
+                        <span>Section: {{RedemptionOrder.UserGoods.OrderDetails.selectedTicket.section}}</span><br/>
+                        <span>Row: {{RedemptionOrder.UserGoods.OrderDetails.selectedTicket.row}}</span><br/>
+                    </td>
+                    <td style="padding: 8px; vertical-align: top; text-align: center;">{{RedemptionOrder.UserGoods.OrderDetails.selectedTicket.desiredQuantity}}</td>
+                    <td style="padding: 8px; vertical-align: top; text-align: center;">{{numberFormat
+                            RedemptionOrder.RedemptionItem.RedemptionQuantity
+                            "###,###.###"}}</td>
+                    <td style="padding: 8px; vertical-align: top; text-align: center;">{{numberFormat
+                            RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="background: #ffffff;height: 10px;"></td>
+    </tr>
+    <tr>
+        <td colspan="2"
+            style="color: #231f20;background-color: #f1f2f2;padding: 8px; text-align: right; font-size: 116%">
+            <strong>TOTAL POINTS USED:</strong> {{numberFormat
+                RedemptionOrder.RedemptionItem.RedemptionQuantity "###,###.###"}}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="background: #ffffff;height: 10px;"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-4">
+                <tr>
+                    <th class="block-header"
+                        style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                        DELIVERY INFORMATION &mdash; SPECIAL INSTRUCTIONS
+                    </th>
+                </tr>
+                <tr>
+                    <td style="line-height: 18px; padding: 12px 8px;">
+                        <p style="margin: 0; padding: 0;">You will be contacted via email closer to the
+                            event date about the type of ticket you will receive along with the expected
+                            delivery details.</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-5">
+                <tr>
+                    <th class="block-header"
+                        style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                        CONTACT/SHIPPING INFORMATION
+                    </th>
+                </tr>
+                <tr>
+                    <td style="line-height: 18px; padding: 12px 8px;">
+                        <p style="margin: 0; padding: 0;">
+                            {{#if Fulfillment.CompanyName}}{{Fulfillment.CompanyName}}<br/>{{/if}}
+                            {{Fulfillment.FirstName}} {{#if Fulfillment.MiddleName}}
+                            {{Fulfillment.MiddleName}}{{/if}} {{Fulfillment.LastName}}<br/>
+                            {{Fulfillment.FulfilmentAddress.Street}}{{#if
+                                Fulfillment.FulfilmentAddress.StreetLine2}}<br/>
+                            {{Fulfillment.FulfilmentAddress.StreetLine2}}{{/if}}<br/>
+                            {{Fulfillment.FulfilmentAddress.City}}
+                            , {{Fulfillment.FulfilmentAddress.Province}}
+                            &nbsp;&nbsp;{{Fulfillment.FulfilmentAddress.PostalCode}}{{#if
+                                Fulfillment.FulfilmentAddress.PostalCode4}}
+                            -{{Fulfillment.FulfilmentAddress.PostalCode4}}{{/if}}<br/>
+                            {{formatPhone Fulfillment.TelephoneNumber}}</p>
+                            {{Fulfillment.EmailAddress}}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- Contact Us -->
+    {{> partials/order-placed-contact-us-v1}}
+{{/ifEquals}}

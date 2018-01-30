@@ -1,0 +1,135 @@
+
+{{#ifEquals RedemptionOrder.UserGoods.0.OrderDetails.type "merchandise" "string"}}
+    <tr>
+        <td colspan="2">
+            <table border="0" cellspacing="0" cellpadding="0" align="left" class="details-table"
+                   width="760">
+                <tr>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        DESCRIPTION
+                    </th>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        QTY
+                    </th>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        POINTS
+                    </th>
+                    <th style="background: #363636;color: #ffffff;font-weight: bold; padding: 8px; text-align: center;text-transform: uppercase;font-size: 108%;">
+                        TOTAL
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="4" style="background: #ffffff;height: 10px;"></td>
+                </tr>
+                {{#eachMerchandise RedemptionOrder.UserGoods}}
+                    <tr>
+                        {{#if this.GoodsDescription}}
+                            <td style="color: #363636;background-color: #f1f2f2;padding: 16px 10px;text-align: left;font-size: 116%;">
+                                {{{../this.GoodsDescription}}}
+                                {{#if ../this.OrderDetails.variantOption}}
+                                    <br/>{{../../this.OrderDetails.variantOption}}{{/if}}
+                                {{#if ../this.OrderDetails.ispStore}}
+                                    <br/>
+                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;Pick Up Location:</span><br/>
+                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;{{../../this.OrderDetails.ispStore.name}}</span><br/>
+                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;Phone: {{formatPhone
+                                            ../../this.OrderDetails.ispStore.address.phoneNumber}}</span><br/>
+                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;{{../../this.OrderDetails.ispStore.address.address1}}</span><br/>
+                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;{{../../this.OrderDetails.ispStore.address.city}}
+                                        , {{../../this.OrderDetails.ispStore.address.region}}  {{../../this.OrderDetails.ispStore.address.postalCode}}</span>
+                                {{/if}}
+                                {{#ifEquals "E" ../this.OrderDetails.deliveryMethod "string"}}
+                                    <br/>
+                                    <span><img class="gyft-small" width="28" height="18"
+                                               src="https://content.revloyalty.com/rev/firstdata/prod/logos/gyft-small.png"
+                                               alt="gyft" title="gyft"/></span><br/>
+                                    <span>{{../../this.OrderDetails.electronicDeliveryInfo.email}}</span>
+                                {{/ifEquals}}
+                            </td>
+                            <td style="color: #231f20;background-color: #f1f2f2;padding: 16px 10px;text-align: center;font-size: 116%;">{{../this.IssueAmount}}</td>
+                            <td style="color: #231f20;background-color: #f1f2f2;padding: 16px 10px;text-align: center;font-size: 116%;">{{numberFormat
+                                    ../this.OrderDetails.pointsPerGood "###,###.###"}} Points
+                            </td>
+                            <td style="color: #231f20;background-color: #f1f2f2;padding: 16px 10px;text-align: center;font-size: 116%;">{{numberFormat
+                                    ../this.OrderDetails.pointsPerGood "###,###.###"}} Points
+                            </td>
+                        {{/if}}
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 0;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #5b5b5b;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="color: #231f20;background-color: #f1f2f2;padding: 0;text-align: center;font-size: 116%;background: #ffffff;height: 10px;border-bottom: none;"></td>
+                    </tr>
+                {{/eachMerchandise}}
+                <tr>
+                    <td colspan="4"
+                        style="color: #231f20; padding: 8px; text-align: right; font-size: 116%">
+                        <strong>TOTAL POINTS USED:</strong> {{numberFormat RedemptionOrder.Quantity
+                                                                           "###,###.###"}}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    {{#if RedemptionOrder.UserGoods.[0].OrderDetails.cartHasISP}}
+        <tr>
+            <td colspan="2">
+                <table border="0" width="760" cellspacing="0" cellpadding="0" align="left"
+                       class="header-4">
+                    <tr>
+                        <th class="block-header"
+                            style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                            DELIVERY INFORMATION &mdash; SPECIAL INSTRUCTIONS
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="line-height: 18px; padding: 12px 8px;">
+                            <p style="margin: 0; padding: 0;">Do not attempt to pick up items until you
+                                receive an email stating that your item is ready for pick up.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    {{/if}}
+
+    <tr>
+        <td colspan="2">
+            <table border="0" width="760" cellspacing="0" cellpadding="0" align="left" class="header-5">
+                <tr>
+                    <th class="block-header"
+                        style="text-align: left;color: #ffffff;padding: 8px;background-color: #363636;font-weight: bold;text-transform: uppercase;font-size: 108%;">
+                        CONTACT/SHIPPING INFORMATION
+                    </th>
+                </tr>
+                <tr>
+                    <td style="line-height: 18px; padding: 12px 8px;">
+                        <p style="margin: 0; padding: 0;">
+                            {{#if Fulfillment.CompanyName}}{{Fulfillment.CompanyName}}<br/>{{/if}}
+                            {{Fulfillment.FirstName}} {{#if Fulfillment.MiddleName}}
+                            {{Fulfillment.MiddleName}}{{/if}} {{Fulfillment.LastName}}<br/>
+                            {{Fulfillment.FulfilmentAddress.Street}}{{#if
+                                Fulfillment.FulfilmentAddress.StreetLine2}}<br/>
+                            {{Fulfillment.FulfilmentAddress.StreetLine2}}{{/if}}<br/>
+                            {{Fulfillment.FulfilmentAddress.City}}
+                            , {{Fulfillment.FulfilmentAddress.Province}}
+                            &nbsp;&nbsp;{{Fulfillment.FulfilmentAddress.PostalCode}}{{#if
+                                Fulfillment.FulfilmentAddress.PostalCode4}}
+                            -{{Fulfillment.FulfilmentAddress.PostalCode4}}{{/if}}<br/>
+                            {{formatPhone Fulfillment.TelephoneNumber}}</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- Contact Us -->
+    {{> partials/order-placed-contact-us-v1}}
+{{/ifEquals}}

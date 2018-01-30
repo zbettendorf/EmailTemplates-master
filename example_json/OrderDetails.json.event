@@ -1,0 +1,35 @@
+{
+"event":{
+"primaryId":"3156007",
+"id":"9538078243301",
+"categoryId":"3977001305584",
+"name":"string",
+"day":null,
+"date":"2017-10-10",
+"allDates":false,
+"time":"3pm"
+},
+"venue":{
+"id":"24350",
+"name":"The Pavilion at Irving Music Factory",
+"address":{
+"address1":"300 W. Las Colina Blvd",
+"address2":"",
+"city":"Irving",
+"region":"Texas",
+"country":"United States of America"
+}
+},
+"selectedTicket":{
+"id":"11466642",
+"section":"GA",
+"row":"GA",
+"seat":"",
+"points":345245,
+"maxQuantity":null,
+"description":"Tickets will be ready for delivery by Oct 08, 2017.",
+"desiredQuantity":1,
+"message":null
+},
+"dtb":null
+}
